@@ -1,6 +1,6 @@
 module.exports = {
     siteMetadata: {
-      title: `My first gatsby site`,
+      title: `Portfólio Online`,
         siteUrl: `https://www.yourdomain.tld`,
     },
     plugins: [
@@ -13,7 +13,27 @@ module.exports = {
           path: `${__dirname}/blog`,
         },
       },
-      "gatsby-plugin-mdx",
+      {
+        resolve: "gatsby-source-filesystem",
+        options: {
+          name: `images`,
+          path: `${__dirname}/src/images`,
+        },
+      },
+      {
+        resolve: "gatsby-plugin-mdx",
+        options: {
+          gatsbyRemarkPlugins: [
+            {
+              resolve: "gatsby-remark-images",
+              options: {
+                maxWidth: 1200,
+              },
+            },
+          ],
+        },
+      },
       "gatsby-transformer-sharp",
+      "gatsby-plugin-material-ui",
     ]
 }

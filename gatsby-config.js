@@ -1,3 +1,7 @@
+require("dotenv").config();
+
+const queries = require("./src/utils/algolia_queries");
+
 module.exports = {
     siteMetadata: {
       title: `Portfólio Online`,
@@ -35,5 +39,19 @@ module.exports = {
       },
       "gatsby-transformer-sharp",
       "gatsby-plugin-material-ui",
+      {
+        resolve: `gatsby-plugin-algolia`,
+        options: {
+          appId: process.env.GATSBY_ALGOLIA_APP_ID,
+          apiKey: process.env.ALGOLIA_ADMIN_KEY,
+          indexName: process.env.GATSBY_ALGOLIA_INDEX_NAME, // for all queries
+          queries,
+          chunkSize: 10000, // default: 1000
+          settings: {
+            // optional, any index settings
+          },
+          enablePartialUpdates: true, // default: false          
+        },
+      },
     ]
 }

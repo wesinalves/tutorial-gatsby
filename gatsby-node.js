@@ -47,6 +47,11 @@ exports.createPages = ({ graphql, actions }) => {
                     }
                     frontmatter {
                         title
+                        hero_image {
+                            childImageSharp {
+                              gatsbyImageData(width: 100, height: 100)
+                            }
+                        }
                     }
                 }
             }

@@ -8,19 +8,18 @@ import Stack from '@mui/material/Stack';
 import Typography from '@mui/material/Typography';
 import Chip from '@mui/material/Chip';
 import { GatsbyImage, getImage } from 'gatsby-plugin-image';
-import { blogItem, hoverUnderlineAnimation, hoverLink } from '../pages/styles.module.css';
+import { blogItem, hoverLink } from '../pages/styles.module.css';
 import Box from '@mui/material/Box';
 import Breadcrumbs from '@mui/material/Breadcrumbs';
-import Pagination from '@mui/material/Pagination';
-import PaginationItem from '@mui/material/PaginationItem';
+import Grid from '@mui/material/Grid';
 
 const BlogList = ({ data, pageContext }) => {
     const posts = data.allMdx.edges
     const { numPages, currentPage } = pageContext
     const isFirst = currentPage === 1
     const isLast = currentPage === numPages
-    const prevPage = currentPage - 1 === 1 ? "/posts" : (currentPage - 1).toString()
-    const nextPage = (currentPage + 1).toString()
+    const prevPage = currentPage - 1 === 1 ? " " : (currentPage - 1).toString()
+    const nextPage = (currentPage + 1).toString()    
     
     return(
         <Layout pageTitle="My blog posts">
@@ -49,25 +48,30 @@ const BlogList = ({ data, pageContext }) => {
                     {
                         posts.map(edge => (
                             <Paper elevation={3} sx={{p: 1}} className={blogItem}>
-                                <GatsbyImage 
-                                    image={getImage(edge.node.frontmatter.hero_image)}
-                                    alt={edge.node.frontmatter.hero_image_alt}
-                                />                        
-                                <Box sx={{ml: 1}}>
-                                    <Chip label={edge.node.frontmatter.category} 
-                                        color={edge.node.frontmatter.color}
-                                        size="small"
-                                        variant="outlined"
-                                    />
-                                    <Link to={`/posts/${edge.node.slug}`}>
-                                        <Typography component='h1' variant='h4' color='primary'>
-                                            {edge.node.frontmatter.title}
-                                        </Typography>
-                                        <Typography component='p' color='text.content'>{edge.node.frontmatter.description}</Typography>
-                                        <Typography variant='caption'>Posted: {edge.node.frontmatter.date} </Typography>
-                                    </Link>                                    
-                                </Box>                                
-
+                                <Grid container spacing={1}>
+                                    <Grid item xs={12} sm={3}>
+                                        <GatsbyImage
+                                            image={getImage(edge.node.frontmatter.hero_image)}
+                                            alt={edge.node.frontmatter.hero_image_alt}                                            
+                                        />
+                                    </Grid>
+                                    <Grid item xs={12} sm={9}>
+                                      <Box sx={{ml: 1}}>
+                                        <Chip label={edge.node.frontmatter.category} 
+                                            color={edge.node.frontmatter.color}
+                                            size="small"
+                                            variant="outlined"
+                                        />
+                                        <Link to={`/posts/${edge.node.slug}`}>
+                                            <Typography component='h1' variant='h4' color='primary'>
+                                                {edge.node.frontmatter.title}
+                                            </Typography>
+                                            <Typography component='p' color='text.content'>{edge.node.frontmatter.description}</Typography>
+                                            <Typography variant='caption'>Posted: {edge.node.frontmatter.date} </Typography>
+                                        </Link>                                    
+                                      </Box>                                                                        
+                                    </Grid>
+                                  </Grid>                                                   
                             </Paper>
                         ))
                     }                
@@ -85,7 +89,7 @@ const BlogList = ({ data, pageContext }) => {
                     >
                       {!isFirst && (
                         <Link
-                          to={prevPage}
+                          to={`/posts/${prevPage}`}
                           rel="prev"                          
                         >
                           {"<< Prev"}
@@ -101,6 +105,7 @@ const BlogList = ({ data, pageContext }) => {
                           <Link
                             to={`/posts/${i === 0 ? "" : i + 1}`}
                             style={{
+                              padding: "0.2rem",
                               textDecoration: "none",
                               color:
                                 i + 1 === currentPage ? "text.primary" : "text.secondary",
@@ -113,7 +118,7 @@ const BlogList = ({ data, pageContext }) => {
                       ))}
                       {!isLast && (
                         <Link
-                          to={nextPage}
+                          to={`/posts/${nextPage}`}
                           rel="next"
                           style={{
                             marginTop: "0.1rem",
@@ -153,7 +158,7 @@ export const query = graphql`
                     description
                     hero_image {
                       childImageSharp {
-                        gatsbyImageData(width: 200)
+                        gatsbyImageData(width: 200, height: 200)
                       }
                     }
                     date

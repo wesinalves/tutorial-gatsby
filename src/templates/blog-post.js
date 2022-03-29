@@ -11,9 +11,9 @@ import Typography from '@mui/material/Typography';
 import { Link } from 'gatsby'
 import { hoverLink } from '../pages/styles.module.css';
 import Grid from '@mui/material/Grid';
+import Stack from '@mui/material/Stack';
 
-const BlogPost = ({ data, pageContext }) => {
-    const image = getImage(data.mdx.frontmatter.hero_image)
+const BlogPost = ({ data, pageContext }) => {    
     const next = pageContext.next
     const previous = pageContext.previous
 
@@ -49,22 +49,46 @@ const BlogPost = ({ data, pageContext }) => {
                         {data.mdx.body}                
                     </MDXRenderer>
                 </Paper>
-                <Grid container spacing={1} sx={{mt: 1}}>
-                    {previous && (
-                        <Grid item xs={6} md={6}>
-                            <Paper elevation={3} sx={{p:3}}>
-                                {"<<" + previous.frontmatter.tittle}
-                            </Paper>                        
+                <Stack spacing={2} direction="row" justifyContent="space-between" sx={{mt: 1}}>
+                {previous && (
+                    <Paper elevation={3} sx={{p:2}}>
+                        <Grid container spacing={1} sx={{mt: 1}}>
+                            <Grid item xs={3} sm={3}>
+                                <GatsbyImage 
+                                image={getImage(previous.frontmatter.hero_image)}
+                                alt={previous.frontmatter.hero_image_alt}
+                                />     
+                            </Grid>
+                            <Grid item xs={9} sm={9}>
+                                    <Link to={previous.fields.slug} className={hoverLink}>
+                                    <Typography variant="h6" >                                        
+                                        {previous.frontmatter.title}
+                                    </Typography>                
+                                </Link>
+                            </Grid>
                         </Grid>                       
-                    )}
-                    {next && (
-                        <Grid item xs={6} md={6}>
-                            <Paper elevation={3} sx={{p:3}}>
-                                {next.frontmatter.tittle + ">>"}
-                            </Paper>
+                    </Paper>                        
+                )}
+                {next && (
+                    <Paper elevation={3} sx={{p:2}}>
+                        <Grid container spacing={1} sx={{mt: 1}}>
+                            <Grid item xs={9} sm={9}>
+                                <Link to={next.fields.slug} className={hoverLink}>                                    
+                                    <Typography variant="h6">                                        
+                                        {next.frontmatter.title}
+                                    </Typography>                                                                   
+                                </Link>
+                            </Grid>
+                            <Grid item xs={3} sm={3}>
+                                <GatsbyImage 
+                                    image={getImage(next.frontmatter.hero_image)}
+                                    alt={next.frontmatter.hero_image_alt}
+                                />     
+                            </Grid>
                         </Grid>
+                    </Paper>
                     )}
-                </Grid>
+            </Stack>
             </Container>
 
         </Layout>

@@ -1,9 +1,7 @@
 import * as React from 'react'
 import Layout from '../components/layout'
-import { StaticImage, getImage } from 'gatsby-plugin-image'
+import { StaticImage } from 'gatsby-plugin-image'
 import { imagePerfil } from './styles.module.css';
-import { graphql } from 'gatsby'
-
 import Button from '@mui/material/Button';
 import Card from '@mui/material/Card';
 import CardActions from '@mui/material/CardActions';

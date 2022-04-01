@@ -1,3 +1,7 @@
+.hover-link {
+    text-decoration: none;
+    color: #616161;
+}
 .hover-link:hover {
     color: #f44336;
     text-decoration-color: #f44336;
@@ -6,4 +10,17 @@
 pre {
     background-color: aliceblue;
     overflow-x: auto;    
+}
+
+.nav-link {
+    margin-left: 10px;        
+    text-decoration: none;
+    text-transform: uppercase;
+    color: inherit;
+    font-weight: bold;    
+}
+
+.nav-link:hover {
+    color: #f44336;
+    text-decoration-color: #f44336;
 }

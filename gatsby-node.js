@@ -21,7 +21,7 @@ exports.onCreateNode = ({ node, getNode, actions }) => {
         const slug = createFilePath({ node, getNode})
         // console.log('@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@', slug)
         // createNodeField creates "fields" in graphql named 'slug' with value of slug for that node:node
-        createNodeField({ node:node, name: `slug`, value: `/posts${slug}` })
+        createNodeField({ node:node, name: `slug`, value: `/blog${slug}` })
     }
 }
 
@@ -82,7 +82,7 @@ exports.createPages = ({ graphql, actions }) => {
 
         Array.from({ length: numPages }).forEach((_, i) => {
             createPage({
-                path: i === 0 ? `/posts` : `/posts/${i + 1}`,
+                path: i === 0 ? `/blog` : `/blog/${i + 1}`,
                 component: blogListTemplate,
                 context: {
                     limit: postsPerPage,

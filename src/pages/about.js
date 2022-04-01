@@ -1,5 +1,6 @@
 import * as React from 'react';
 import Layout from '../components/layout';
+import Header from '../components/header';
 import Typography from '@mui/material/Typography';
 import Container from '@mui/material/Container';
 import Accordion from '@mui/material/Accordion';
@@ -7,34 +8,17 @@ import AccordionSummary from '@mui/material/AccordionSummary';
 import AccordionDetails from '@mui/material/AccordionDetails';
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
 import Box from '@material-ui/core/Box';
-import Breadcrumbs from '@mui/material/Breadcrumbs';
-import { Link } from 'gatsby';
-import { hoverLink } from './styles.module.css';
+import Seo from '../components/seo';
 
 const AboutPage = () => {
     return (
         <Layout pageTitle="Sobre mim">
-            <Container disableGutters maxWidth="md" component="main" >
-                <Box sx={{p: 3,
-                    display: 'flex', 
-                    flexDirection: 'column', 
-                    alignItems: 'center'}}>
-                    <Typography
-                        component="h1"
-                        variant="h4"          
-                        align="center"
-                        color="text.primary"                        
-                        gutterBottom
-                        >
-                    Sobre
-                    </Typography>
-                    <Breadcrumbs aria-label="breadcrumb">
-                        <Link to="/" className={hoverLink}>
-                            <Typography color="text.secondary " className={hoverLink}>Home</Typography>
-                        </Link>                    
-                        <Typography color="text.primary">Sobre</Typography>
-                    </Breadcrumbs>
-                </Box>
+            <Seo
+                title='Sobre'
+                description='Página Sobre'            
+            />
+            <Container disableGutters maxWidth="md" component="main" >                
+                <Header name="Sobre" links={[{path: '/', description: 'Home'}]} />
                 <Typography variant="h5" align="left" color="text.secondary" component="p">
                     Meu nome é Wesin Ribeiro. Sou Engenheiro da Computação atuando na área de
                     desenvolvimento de sistemas e aplicações web desde de 2007. Possuo mestrado e

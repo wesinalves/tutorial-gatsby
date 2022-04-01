@@ -1,6 +1,7 @@
-import * as React from 'react'
-import { graphql } from 'gatsby'
-import Layout from '../components/layout'
+import * as React from 'react';
+import { graphql } from 'gatsby';
+import Layout from '../components/layout';
+import Header from '../components/header';
 import { Link } from 'gatsby'
 import Container from '@mui/material/Container';
 import Paper from '@mui/material/Paper';
@@ -8,10 +9,10 @@ import Stack from '@mui/material/Stack';
 import Typography from '@mui/material/Typography';
 import Chip from '@mui/material/Chip';
 import { GatsbyImage, getImage } from 'gatsby-plugin-image';
-import { blogItem, hoverLink } from '../pages/styles.module.css';
+import { blogItem} from '../pages/styles.module.css';
 import Box from '@mui/material/Box';
-import Breadcrumbs from '@mui/material/Breadcrumbs';
 import Grid from '@mui/material/Grid';
+import Seo from '../components/seo';
 
 const BlogList = ({ data, pageContext }) => {
     const posts = data.allMdx.edges
@@ -23,27 +24,12 @@ const BlogList = ({ data, pageContext }) => {
     
     return(
         <Layout pageTitle="My blog posts">
+            <Seo
+                title='Blog'
+                description='Página de Blog'                
+            />
             <Container maxWidth="md" component="main">
-                <Box sx={{p: 3,
-                    display: 'flex', 
-                    flexDirection: 'column', 
-                    alignItems: 'center'}}>
-                    <Typography
-                        component="h1"
-                        variant="h4"          
-                        align="center"
-                        color="text.primary"                        
-                        gutterBottom
-                        >
-                    Blog
-                    </Typography>
-                    <Breadcrumbs aria-label="breadcrumb">
-                        <Link to="/" className={hoverLink} >
-                            <Typography color="text.secondary" className={hoverLink}>Home</Typography>
-                        </Link>                    
-                        <Typography color="text.primary">Blog</Typography>
-                    </Breadcrumbs>
-                </Box>
+                <Header name="Blog" links={[{path: '/', description: 'Home'}]} />
                 <Stack spacing={2} >
                     {
                         posts.map(edge => (
@@ -62,7 +48,7 @@ const BlogList = ({ data, pageContext }) => {
                                             size="small"
                                             variant="outlined"
                                         />
-                                        <Link to={`/posts/${edge.node.slug}`}>
+                                        <Link to={`/blog/${edge.node.slug}`}>
                                             <Typography component='h1' variant='h4' color='primary'>
                                                 {edge.node.frontmatter.title}
                                             </Typography>
@@ -89,7 +75,7 @@ const BlogList = ({ data, pageContext }) => {
                     >
                       {!isFirst && (
                         <Link
-                          to={`/posts/${prevPage}`}
+                          to={`/blog/${prevPage}`}
                           rel="prev"                          
                         >
                           {"<< Prev"}
@@ -103,7 +89,7 @@ const BlogList = ({ data, pageContext }) => {
                           }}
                         >
                           <Link
-                            to={`/posts/${i === 0 ? "" : i + 1}`}
+                            to={`/blog/${i === 0 ? "" : i + 1}`}
                             style={{
                               padding: "0.2rem",
                               textDecoration: "none",
@@ -118,7 +104,7 @@ const BlogList = ({ data, pageContext }) => {
                       ))}
                       {!isLast && (
                         <Link
-                          to={`/posts/${nextPage}`}
+                          to={`/blog/${nextPage}`}
                           rel="next"
                           style={{
                             marginTop: "0.1rem",

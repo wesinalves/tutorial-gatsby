@@ -1,36 +1,20 @@
 import * as React from 'react';
 import Layout from '../components/layout';
-import Typography from '@mui/material/Typography';
 import Container from '@mui/material/Container';
 import Box from '@material-ui/core/Box';
-import Breadcrumbs from '@mui/material/Breadcrumbs';
 import { Link } from 'gatsby';
-import { hoverLink } from './styles.module.css';
+import Seo from '../components/seo';
+import Header from '../components/header';
 
 const TermPage = () => {
     return(
         <Layout pageTitle="Política de Privacidade">
+            <Seo
+                title='Termso de Uso'
+                description='Página de política de privacidade'            
+            />
             <Container disableGutters maxWidth="md" component="main" >
-                <Box sx={{p: 3,
-                    display: 'flex', 
-                    flexDirection: 'column', 
-                    alignItems: 'center'}}>
-                    <Typography
-                        component="h1"
-                        variant="h4"          
-                        align="center"
-                        color="text.primary"                        
-                        gutterBottom
-                        >
-                    Termos de Uso
-                    </Typography>
-                    <Breadcrumbs aria-label="breadcrumb">
-                        <Link to="/" className={hoverLink}>
-                            <Typography color="text.secondary " className={hoverLink}>Home</Typography>
-                        </Link>                    
-                        <Typography color="text.primary">Termos de Uso</Typography>
-                    </Breadcrumbs>
-                </Box>
+                <Header name='Termos' links={[{path: '/', description:'Home'}]}/>
                 <Box>
                     <h2>1. Termos</h2>            
                     <p>Ao acessar ao site <Link to='/'>wesinribeiro.com</Link>, concorda em cumprir estes 

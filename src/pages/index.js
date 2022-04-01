@@ -12,6 +12,7 @@ import Grid from '@mui/material/Grid';
 import Typography from '@mui/material/Typography';
 import Container from '@mui/material/Container';
 import Rating from '@mui/material/Rating';
+import Seo from '../components/seo';
 
 const tiers = [
   {
@@ -103,6 +104,10 @@ const portfolios = [
 const IndexPage = () => {
   return (
     <Layout pageTitle="Home Page">
+        <Seo
+            title='Home'
+            description='Home Page'            
+        />
       {/* Hero unit */}
       <Container disableGutters maxWidth="sm" component="main" sx={{ pt: 4, pb: 6, display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
           

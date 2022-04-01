@@ -1,36 +1,20 @@
 import * as React from 'react';
 import Layout from '../components/layout';
-import Typography from '@mui/material/Typography';
 import Container from '@mui/material/Container';
 import Box from '@material-ui/core/Box';
-import Breadcrumbs from '@mui/material/Breadcrumbs';
 import { Link } from 'gatsby';
-import { hoverLink } from './styles.module.css';
+import Seo from '../components/seo';
+import Header from '../components/header';
 
 const PolicyPage = () => {
     return(
         <Layout pageTitle="Política de Privacidade">
+            <Seo
+                title='Poliítica de Privacidade'
+                description='Página de política de privacidade'            
+            />
             <Container disableGutters maxWidth="md" component="main" >
-                <Box sx={{p: 3,
-                    display: 'flex', 
-                    flexDirection: 'column', 
-                    alignItems: 'center'}}>
-                    <Typography
-                        component="h1"
-                        variant="h4"          
-                        align="center"
-                        color="text.primary"                        
-                        gutterBottom
-                        >
-                    Política de Privacidade
-                    </Typography>
-                    <Breadcrumbs aria-label="breadcrumb">
-                        <Link to="/" className={hoverLink}>
-                            <Typography color="text.secondary " className={hoverLink}>Home</Typography>
-                        </Link>                    
-                        <Typography color="text.primary">Política de Privacidade</Typography>
-                    </Breadcrumbs>
-                </Box>
+                <Header name='Política de Privacidade' links={[{path: '/', description:'Home'}]}/>                
                 <Box>
                 <h2>Privacidade</h2>
                 <p>A sua privacidade é importante para nós. É política do wesinribeiro.com respeitar 
@@ -47,7 +31,7 @@ const PolicyPage = () => {
                 exceto quando exigido por lei.</p> 
                 <p>O nosso site pode ter links para sites externos que não são operados por nós. 
                 Esteja ciente de que não temos controle sobre o conteúdo e práticas desses sites e não 
-                podemos aceitar responsabilidade por suas respectivas <a href='https://politicaprivacidade.com' target='_BLANK'>políticas de privacidade</a>.</p>
+                podemos aceitar responsabilidade por suas respectivas <a href='https://politicaprivacidade.com' target='_BLANK' rel="noreferrer">políticas de privacidade</a>.</p>
                 <p>Você é livre para recusar a nossa solicitação de informações pessoais, entendendo que 
                 talvez não possamos fornecer alguns dos serviços desejados.</p> 
                 <p>O uso continuado de nosso site será considerado como aceitação de nossas práticas 

@@ -6,23 +6,23 @@ import CssBaseline from '@mui/material/CssBaseline';
 import Grid from '@mui/material/Grid';
 import Toolbar from '@mui/material/Toolbar';
 import Typography from '@mui/material/Typography';
-import Link from '@mui/material/Link';
+import { Link } from 'gatsby'
 import GlobalStyles from '@mui/material/GlobalStyles';
 import Container from '@mui/material/Container';
-import { hoverLink } from './layout.module.css'
+import { hoverLink, navLink } from './layout.module.css'
 import { ThemeProvider } from '@mui/material/styles';
 import { createTheme } from '@mui/material';
 import grey from '@material-ui/core/colors/grey';
 import green from '@material-ui/core/colors/green';
 import red from '@material-ui/core/colors/red';
 import SearchIcon from '@mui/icons-material/Search';
-import LightbulbIcon from '@mui/icons-material/Lightbulb';
 import useScrollTrigger from '@mui/material/useScrollTrigger';
 import Fab from '@mui/material/Fab';
 import KeyboardArrowUpIcon from '@mui/icons-material/KeyboardArrowUp';
 import Zoom from '@mui/material/Zoom';
 import PropTypes from 'prop-types';
 import Box from '@material-ui/core/Box';
+import propTypes from "prop-types"
 
 function ScrollTop(props) {
     const { children, window } = props;
@@ -72,7 +72,7 @@ function ScrollTop(props) {
 
 
 const theme = createTheme({    
-    palette: {
+    palette: {      
       primary: {
         main: green[900],
         contrastText: grey[100]
@@ -160,44 +160,14 @@ const Layout = ({props, pageTitle, children}) => {
                 <Typography variant="h6" color="inherit" noWrap sx={{ flexGrow: 1 }}>
                     {pageTitle} | {data.site.siteMetadata.title}
                 </Typography>
-                <nav>
-                    <Link
-                    variant="button"
-                    color="inherit"
-                    href="/"
-                    sx={{ my: 1, mx: 1.5 }}
-                    underline="none"
-                    className={hoverLink}                    
-                    >
-                    Home
-                    </Link>
-                    <Link
-                    variant="button"
-                    color="inherit"
-                    href="/about"
-                    sx={{ my: 1, mx: 1.5 }}
-                    underline="none"
-                    className={hoverLink}
-                    >
-                    Sobre
-                    </Link>
-                    <Link
-                    variant="button"
-                    color="inherit"
-                    href="/blog"
-                    sx={{ my: 1, mx: 1.5 }}
-                    underline="none"
-                    className={hoverLink}
-                    >
-                    Blog
-                    </Link>
+                <nav >
+                    <Link to="/" className={navLink}>Home</Link>           
+                    <Link to="/about" className={navLink}>Sobre</Link>
+                    <Link to="/blog"  className={navLink}>Blog</Link>
                 </nav>
                 <Button href="/search" variant="outlined" sx={{ my: 1, mx: 1.5 }} color='inherit'>
                     <SearchIcon />
-                </Button>
-                <Button href="/search" variant="outlined" sx={{ my: 1, mx: 1.5 }} color='inherit'>
-                    <LightbulbIcon />
-                </Button>
+                </Button>                
                 </Toolbar>
             </AppBar> 
             <Toolbar id="back-to-top-anchor" />           
@@ -219,7 +189,7 @@ const Layout = ({props, pageTitle, children}) => {
                 <Grid container spacing={4} justifyContent="space-evenly">
                   <Grid item xs={6} sm={3}>
                     
-                    <Typography variant="subtitle1" color="textSecondary">
+                    <Typography variant="subtitle1" color="text.secondary">
                         "Não sei como será o futuro, mas será com inteligência artificial."
                     </Typography>
                   </Grid>
@@ -231,12 +201,7 @@ const Layout = ({props, pageTitle, children}) => {
                     <ul>                        
                         {footer.description.map((item) => (
                         <li key={item[0]}>
-                            <Link href={item[1]} 
-                                variant="subtitle1" 
-                                color="text.secondary" 
-                                underline="none"
-                                className={hoverLink}
-                                >
+                            <Link to={item[1]} className={hoverLink}>
                             {item[0]}
                             </Link>
                         </li>
@@ -256,5 +221,10 @@ const Layout = ({props, pageTitle, children}) => {
         </ThemeProvider>
     )
 }
+
+Layout.propTypes = {
+    children: propTypes.node.isRequired,
+    pageTitle: propTypes.string.isRequired,
+};
 
 export default Layout

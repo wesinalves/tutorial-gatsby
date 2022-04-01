@@ -11,6 +11,7 @@ import { hoverLink,
 import algoliasearch from 'algoliasearch/lite';
 import { InstantSearch, SearchBox, Hits, Stats } from 'react-instantsearch-dom';
 import Hit from '../components/hit';
+import Seo from '../components/seo';
 
 
 const algolia = {
@@ -24,6 +25,10 @@ const searchClient = algoliasearch(algolia.appId, algolia.searchOnlyApiKey);
 const SearchPage = () => {
     return (
         <Layout pageTitle="Pesquisar">
+            <Seo
+                title='Pesquisa'
+                description='Página de pesquisa'            
+            />
             <Container disableGutters maxWidth="md" component="main" >
                 <Box sx={{p: 3,
                     display: 'flex', 
@@ -47,8 +52,7 @@ const SearchPage = () => {
                 </Box>
                 <Box className={aisSearchBox}>
                     <InstantSearch searchClient={searchClient} indexName={algolia.indexName} >
-                        <SearchBox                              
-                            autoFocus
+                        <SearchBox                                                          
                             translations={{ placeholder: 'Pesquisar...' }}
                             />
                         <Stats className={aisStats} 

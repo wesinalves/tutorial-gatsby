@@ -2,16 +2,16 @@ import * as React from 'react'
 import { graphql } from 'gatsby'
 import { MDXRenderer } from 'gatsby-plugin-mdx'
 import { GatsbyImage, getImage } from 'gatsby-plugin-image'
-import Layout from '../components/layout'
+import Layout from '../components/layout';
+import Header from '../components/header';
 import Container from '@mui/material/Container'
 import Paper from '@mui/material/Paper';
-import Box from '@mui/material/Box';
-import Breadcrumbs from '@mui/material/Breadcrumbs';
 import Typography from '@mui/material/Typography';
 import { Link } from 'gatsby'
 import { hoverLink } from '../pages/styles.module.css';
 import Grid from '@mui/material/Grid';
 import Stack from '@mui/material/Stack';
+import SEO from '../components/seo';
 
 const BlogPost = ({ data, pageContext }) => {    
     const next = pageContext.next
@@ -19,30 +19,13 @@ const BlogPost = ({ data, pageContext }) => {
 
     return (
         <Layout pageTitle={data.mdx.frontmatter.title}>
+            <SEO
+                title={data.mdx.frontmatter.title}
+                description={data.mdx.frontmatter.description}
+                image={data.mdx.frontmatter.image}
+            />
             <Container maxWidth="md" component="main">
-                <Box sx={{p: 3,
-                    display: 'flex', 
-                    flexDirection: 'column', 
-                    alignItems: 'center'}}>
-                    <Typography
-                        component="h1"
-                        variant="h4"          
-                        align="center"
-                        color="text.primary"                        
-                        gutterBottom
-                        >
-                    Blog
-                    </Typography>
-                    <Breadcrumbs aria-label="breadcrumb">
-                        <Link to="/" className={hoverLink} >
-                            <Typography color="text.secondary" className={hoverLink}>Home</Typography>
-                        </Link>
-                        <Link to="/blog" className={hoverLink} >
-                            <Typography color="text.secondary" className={hoverLink}>Blog</Typography>
-                        </Link>                     
-                        <Typography color="text.primary">{data.mdx.frontmatter.title}</Typography>
-                    </Breadcrumbs>
-                </Box>
+                <Header name={data.mdx.frontmatter.title} links={[{path: '/', description: 'Home'}, {path: '/blog', description: 'Blog'}]} />
                 <Paper elevation={3} sx={{p: 1, color: 'text.secondary'}}>
                     <p>{data.mdx.frontmatter.date}</p>            
                     <MDXRenderer>
@@ -88,7 +71,7 @@ const BlogPost = ({ data, pageContext }) => {
                         </Grid>
                     </Paper>
                     )}
-            </Stack>
+            </Stack>            
             </Container>
 
         </Layout>

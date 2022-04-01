@@ -9,7 +9,7 @@ import Stack from '@mui/material/Stack';
 import Typography from '@mui/material/Typography';
 import Chip from '@mui/material/Chip';
 import { GatsbyImage, getImage } from 'gatsby-plugin-image';
-import { blogItem} from '../pages/styles.module.css';
+import { blogItem, hoverLink } from '../pages/styles.module.css';
 import Box from '@mui/material/Box';
 import Grid from '@mui/material/Grid';
 import Seo from '../components/seo';
@@ -63,18 +63,22 @@ const BlogList = ({ data, pageContext }) => {
                     }                
                 </Stack>
                 <Box sx={{p: 1, alignItems: 'center'}}>
-                    <ul
+                    <ul                      
                       style={{
                         display: "flex",
                         flexWrap: "wrap",
                         justifyContent: "center",
                         alignItems: "center",
                         listStyle: "none",
-                        padding: 0,
+                        padding: 0,                        
                       }}
                     >
                       {!isFirst && (
                         <Link
+                          style={{
+                            color: "var(--headerColor)",
+                            textDecoration: "none",
+                          }}
                           to={`/blog/${prevPage}`}
                           rel="prev"                          
                         >
@@ -89,13 +93,13 @@ const BlogList = ({ data, pageContext }) => {
                           }}
                         >
                           <Link
-                            to={`/blog/${i === 0 ? "" : i + 1}`}
+                            to={`/blog/${i === 0 ? "" : i + 1}`}                            
                             style={{
                               padding: "0.2rem",
                               textDecoration: "none",
                               color:
-                                i + 1 === currentPage ? "text.primary" : "text.secondary",
-                              background: i + 1 === currentPage ? "text.secondary" : "",
+                                i + 1 === currentPage ? "#fff" : "#616161",
+                              background: i + 1 === currentPage ? "#1b5e20" : "",
                             }}
                           >
                             {i + 1}
@@ -111,6 +115,7 @@ const BlogList = ({ data, pageContext }) => {
                             marginBottom: "0.1rem",
                             padding: "0.5rem",
                             color: "var(--headerColor)",
+                            textDecoration: "none",
                           }}
                         >
                           {"Next >>"}

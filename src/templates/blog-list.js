@@ -23,7 +23,7 @@ const BlogList = ({ data, pageContext }) => {
     const nextPage = (currentPage + 1).toString()    
     
     return(
-        <Layout pageTitle="My blog posts">
+        <Layout pageTitle="Página de Blog">
             <Seo
                 title='Blog'
                 description='Página de Blog'                

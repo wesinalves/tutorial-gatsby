@@ -5,11 +5,14 @@ const queries = require("./src/utils/algolia_queries");
 module.exports = {
     siteMetadata: {
       title: `Portfólio Online`,
-        siteUrl: `https://www.yourdomain.tld`,
+      siteUrl: `https://www.yourdomain.tld`,
+      author: `Wesin Alves`,
+      description: `Portfólio online de Wesin Alves.`,
     },
     plugins: [
       "gatsby-plugin-image",
       "gatsby-plugin-sharp",
+      "gatsby-plugin-react-helmet",
       {
         resolve: "gatsby-source-filesystem",
         options: {
@@ -53,5 +56,6 @@ module.exports = {
           enablePartialUpdates: true, // default: false          
         },
       },
+      "gatsby-plugin-sitemap",
     ]
 }

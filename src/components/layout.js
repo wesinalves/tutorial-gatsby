@@ -23,6 +23,10 @@ import Zoom from '@mui/material/Zoom';
 import PropTypes from 'prop-types';
 import Box from '@material-ui/core/Box';
 import propTypes from "prop-types"
+import MenuItem from '@mui/material/MenuItem';
+import Menu from '@mui/material/Menu';
+import MenuIcon from '@mui/icons-material/Menu';
+import IconButton from '@mui/material/IconButton';
 
 function ScrollTop(props) {
     const { children, window } = props;
@@ -96,8 +100,7 @@ const footers = [
       description: [
           ['home','/'], 
           ['about','/about'], 
-          ['blog','/blog'], 
-          ['contato','/contact']],
+          ['blog','/blog'], ],
     },
     {
       title: 'Social',
@@ -140,7 +143,17 @@ const Layout = ({props, pageTitle, children}) => {
             }
             }
         }
-    `)
+    `);
+
+    const [anchorElNav, setAnchorElNav] = React.useState(null);
+
+    const handleCloseNavMenu = () => {
+      setAnchorElNav(null);
+    };
+
+    const handleOpenNavMenu = (event) => {
+      setAnchorElNav(event.currentTarget);
+    };
 
     return (
         <ThemeProvider theme={theme}>
@@ -157,17 +170,64 @@ const Layout = ({props, pageTitle, children}) => {
                 sx={{ borderBottom: (theme) => `1px solid ${theme.palette.divider}` }}                
             >
                 <Toolbar sx={{ flexWrap: 'wrap' }}>
-                <Typography variant="h6" color="inherit" noWrap sx={{ flexGrow: 1 }}>
-                    {pageTitle} | {data.site.siteMetadata.title}
-                </Typography>
-                <nav >
-                    <Link to="/" className={navLink}>Home</Link>           
-                    <Link to="/about" className={navLink}>Sobre</Link>
-                    <Link to="/blog"  className={navLink}>Blog</Link>
-                </nav>
-                <Button href="/search" variant="outlined" sx={{ my: 1, mx: 1.5 }} color='inherit'>
-                    <SearchIcon />
-                </Button>                
+                <Box sx={{ flexGrow: 1, display: { xs: 'flex', md: 'none' } }}>
+                  <IconButton
+                    size="large"
+                    aria-label="account of current user"
+                    aria-controls="menu-appbar"
+                    aria-haspopup="true"
+                    onClick={handleOpenNavMenu}
+                    color="inherit"
+                  >
+                    <MenuIcon />
+                  </IconButton>
+                  <Menu
+                    id="menu-appbar"
+                    anchorEl={anchorElNav}
+                    anchorOrigin={{
+                      vertical: 'bottom',
+                      horizontal: 'left',
+                    }}
+                    keepMounted
+                    transformOrigin={{
+                      vertical: 'top',
+                      horizontal: 'left',
+                    }}
+                    open={Boolean(anchorElNav)}
+                    onClose={handleCloseNavMenu}
+                    sx={{
+                      display: { xs: 'block', md: 'none' },
+                    }}
+                  >
+                      <MenuItem >
+                        <Link to='/'className={navLink} textAlign="center">Home</Link >
+                      </MenuItem>
+                      <MenuItem >
+                        <Link to='/about'className={navLink} textAlign="center">Sobre</Link >
+                      </MenuItem>
+                      <MenuItem >
+                        <Link to='/blog'className={navLink} textAlign="center">Blog</Link >
+                      </MenuItem>
+                      <MenuItem >
+                        <Link to='/search'className={navLink} textAlign="center">Pesquisar</Link >
+                      </MenuItem>
+                    
+                  </Menu>
+                </Box>
+                <Box sx={{ flexGrow: 1, display: {xs: 'none', md:'flex'}, alignItems: 'center'}}>
+                  <Typography variant="h6" color="inherit" noWrap sx={{ flexGrow: 1 }}>
+                      {pageTitle} | {data.site.siteMetadata.title}
+                  </Typography>
+                  <nav >
+                      <Link to="/" className={navLink}>Home</Link>           
+                      <Link to="/about" className={navLink}>Sobre</Link>
+                      <Link to="/blog"  className={navLink}>Blog</Link>
+                  </nav>
+                  <Button href="/search" variant="outlined" sx={{ my: 1, mx: 1.5 }} color='inherit'>
+                      <SearchIcon />
+                  </Button>                
+
+                </Box>
                 </Toolbar>
             </AppBar> 
             <Toolbar id="back-to-top-anchor" />           

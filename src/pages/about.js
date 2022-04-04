@@ -19,12 +19,12 @@ const AboutPage = () => {
             />
             <Container disableGutters maxWidth="md" component="main" >                
                 <Header name="Sobre" links={[{path: '/', description: 'Home'}]} />
-                <Typography variant="h5" align="left" color="text.secondary" component="p">
+                <Typography variant="h5" align="left" color="text.secondary" component="p" sx={{ml: 1}}>
                     Meu nome é Wesin Ribeiro. Sou Engenheiro da Computação atuando na área de
                     desenvolvimento de sistemas e aplicações web desde de 2007. Possuo mestrado e
                     doutorado na área de computação aplicada e adoro programar em Python.                    
                 </Typography>
-                <Typography variant="h5" align="left" color="text.secondary" component="p">                    
+                <Typography variant="h5" align="left" color="text.secondary" component="p" sx={{ml: 1}}>                    
                     Atualmente estou trabalhando como chefe da divisão de projeto de sistemas 
                     no Ministério das Comunicações utilizando metodologia ágil, devops e 
                     computação em nuvem para gerenciar as aplicações.                    

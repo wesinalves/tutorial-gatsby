@@ -53,7 +53,7 @@ module.exports = {
           settings: {
             // optional, any index settings
           },
-          enablePartialUpdates: true, // default: false          
+          enablePartialUpdates: true, // default: false                              
         },
       },
       "gatsby-plugin-sitemap",

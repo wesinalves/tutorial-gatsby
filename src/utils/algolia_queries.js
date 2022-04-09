@@ -6,7 +6,7 @@ const postQuery = `{
         node {
             objectID: id
             fields {
-              slug
+              slug              
             }
             frontmatter {
               category
@@ -22,6 +22,7 @@ const postQuery = `{
               date_timestamp: date
             }
             excerpt(pruneLength: 5000)
+            modified: frontmatter{date}
           }
         }
       }  

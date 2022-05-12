@@ -27,21 +27,6 @@ import MenuItem from '@mui/material/MenuItem';
 import Menu from '@mui/material/Menu';
 import MenuIcon from '@mui/icons-material/Menu';
 import IconButton from '@mui/material/IconButton';
-import { styled } from '@mui/material/styles';
-
-
-const Root = styled('div')(({ theme }) => ({
-  padding: theme.spacing(1),
-  [theme.breakpoints.down('md')]: {
-    backgroundColor: red[500],
-  },
-  [theme.breakpoints.up('md')]: {
-    backgroundColor: grey[500],
-  },
-  [theme.breakpoints.up('lg')]: {
-    backgroundColor: green[500],
-  },
-}));
 
 
 function ScrollTop(props) {
@@ -187,7 +172,7 @@ const Layout = ({props, pageTitle, children}) => {
             >
               <Container maxWidth="xl">
                 <Toolbar disableGutters>
-                <Box sx={{ flexGrow: 1, display: { xs: 'flex', md: 'none' } }}>
+                <Box sx={{ flexGrow: 1, display: { xs: 'none', md: 'none' } }}>
                   <IconButton
                     size="large"
                     aria-label="account of current user"
@@ -254,12 +239,6 @@ const Layout = ({props, pageTitle, children}) => {
             <main>                
                 {children}
             </main>
-
-            <Root>
-              <Typography>down(md): red</Typography>
-              <Typography>up(md): blue</Typography>
-              <Typography>up(lg): green</Typography>
-            </Root>
             {/* Footer */}
             <Container
                 maxWidth="md"

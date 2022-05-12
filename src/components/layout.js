@@ -28,6 +28,7 @@ import Menu from '@mui/material/Menu';
 import MenuIcon from '@mui/icons-material/Menu';
 import IconButton from '@mui/material/IconButton';
 
+
 function ScrollTop(props) {
     const { children, window } = props;
     // Note that you normally won't need to set the window ref as useScrollTrigger
@@ -169,7 +170,8 @@ const Layout = ({props, pageTitle, children}) => {
                 elevation={0}
                 sx={{ borderBottom: (theme) => `1px solid ${theme.palette.divider}` }}                
             >
-                <Toolbar sx={{ flexWrap: 'wrap' }}>
+              <Container maxWidth="xl">
+                <Toolbar disableGutters>
                 <Box sx={{ flexGrow: 1, display: { xs: 'flex', md: 'none' } }}>
                   <IconButton
                     size="large"
@@ -229,6 +231,7 @@ const Layout = ({props, pageTitle, children}) => {
 
                 </Box>
                 </Toolbar>
+              </Container>
             </AppBar> 
             <Toolbar id="back-to-top-anchor" />           
             <title>{pageTitle} | {data.site.siteMetadata.title}</title>         

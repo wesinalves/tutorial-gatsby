@@ -165,7 +165,7 @@ const Layout = ({props, pageTitle, children}) => {
             <GlobalStyles styles={{ul: { margin: 0, padding: 0, listStyle: 'none'}}} />
             <CssBaseline />
             <AppBar
-                position="fixed"
+                position="sticky"
                 color="primary"
                 elevation={0}
                 sx={{ borderBottom: (theme) => `1px solid ${theme.palette.divider}` }}                

@@ -172,7 +172,7 @@ const Layout = ({props, pageTitle, children}) => {
             >
               <Container maxWidth="xl">
                 <Toolbar disableGutters>
-                <Box sx={{ flexGrow: 1, display: { xs: 'none', md: 'none' } }}>
+                <Box sx={{ flexGrow: 1, display: { xs: 'flex', md: 'none', lg: 'none' } }}>
                   <IconButton
                     size="large"
                     aria-label="account of current user"
@@ -198,7 +198,7 @@ const Layout = ({props, pageTitle, children}) => {
                     open={Boolean(anchorElNav)}
                     onClose={handleCloseNavMenu}
                     sx={{
-                      display: { xs: 'block', md: 'none' },
+                      display: { xs: 'block', md: 'none', lg: 'none' },
                     }}
                   >
                       <MenuItem >
@@ -216,7 +216,7 @@ const Layout = ({props, pageTitle, children}) => {
                     
                   </Menu>
                 </Box>
-                <Box sx={{ flexGrow: 1, display: {xs: 'none', md:'flex'}, alignItems: 'center'}}>
+                <Box sx={{ flexGrow: 1, display: {xs: 'none', md:'flex', lg:'flex'}, alignItems: 'center'}}>
                   <Typography variant="h6" color="inherit" noWrap sx={{ flexGrow: 1 }}>
                       {pageTitle} | {data.site.siteMetadata.title}
                   </Typography>

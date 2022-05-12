@@ -21,7 +21,7 @@ import Fab from '@mui/material/Fab';
 import KeyboardArrowUpIcon from '@mui/icons-material/KeyboardArrowUp';
 import Zoom from '@mui/material/Zoom';
 import PropTypes from 'prop-types';
-import Box from '@material-ui/core/Box';
+import Box from '@mui/material/Box';
 import propTypes from "prop-types"
 import MenuItem from '@mui/material/MenuItem';
 import Menu from '@mui/material/Menu';

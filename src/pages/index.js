@@ -131,7 +131,9 @@ const IndexPage = () => {
                 <Button fullwidth variant="contained" color="primary"> Baixar ebook </Button>                
             </Grid>            
             <Grid item >                                
-                <Button fullwidth variant="contained" color="secondary"> Aprenda Python </Button>
+                <Button fullwidth variant="contained" color="secondary" 
+                href="https://www.udemy.com/course/como-programar-em-python/" 
+                target="_blank" > Aprenda Python </Button>
             </Grid>            
           </Grid>
           <StaticImage

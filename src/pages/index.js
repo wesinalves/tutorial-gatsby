@@ -13,6 +13,7 @@ import Typography from '@mui/material/Typography';
 import Container from '@mui/material/Container';
 import Rating from '@mui/material/Rating';
 import Seo from '../components/seo';
+import { OutboundLink } from "gatsby-plugin-google-analytics"
 
 const tiers = [
   {
@@ -128,12 +129,18 @@ const IndexPage = () => {
           </Typography>
           <Grid container justifyContent='center' sx={{ marginTop: 1}} spacing={2}>
             <Grid item >                
-                <Button fullwidth variant="contained" color="primary"> Baixar ebook </Button>                
+                <Button fullwidth variant="contained" color="primary">
+                    Baixar ebook                    
+                </Button>                
             </Grid>            
             <Grid item >                                
                 <Button fullwidth variant="contained" color="secondary" 
                 href="https://www.udemy.com/course/como-programar-em-python/" 
-                target="_blank" > Aprenda Python </Button>
+                target="_blank" > 
+                    <OutboundLink name='curso'> 
+                        Aprenda Python 
+                    </OutboundLink> 
+                </Button>
             </Grid>            
           </Grid>
           <StaticImage

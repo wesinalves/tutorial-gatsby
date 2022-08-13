@@ -77,7 +77,7 @@ module.exports = {
             // Setting this parameter is also optional
             respectDNT: true,
             // Defaults to https://www.googletagmanager.com
-            origin: "https://engmoderno.com.br",
+            //origin: "https://engmoderno.com.br",
           },
         },
       },

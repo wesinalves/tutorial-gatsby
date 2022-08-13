@@ -13,7 +13,7 @@ import Typography from '@mui/material/Typography';
 import Container from '@mui/material/Container';
 import Rating from '@mui/material/Rating';
 import Seo from '../components/seo';
-import { OutboundLink } from "gatsby-plugin-google-analytics"
+import { OutboundLink } from "gatsby-plugin-google-gtag"
 
 const tiers = [
   {
@@ -136,10 +136,8 @@ const IndexPage = () => {
             <Grid item >                                
                 <Button fullwidth variant="contained" color="secondary" 
                 href="https://www.udemy.com/course/como-programar-em-python/" 
-                target="_blank" > 
-                    <OutboundLink name='curso'> 
-                        Aprenda Python 
-                    </OutboundLink> 
+                target="_blank" >                     
+                    Aprenda Python                     
                 </Button>
             </Grid>            
           </Grid>

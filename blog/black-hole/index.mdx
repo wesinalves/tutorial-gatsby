@@ -1,10 +1,10 @@
 ---
 layout: post
-title:  "Primeira imagem de um buraco negro usando Python."
+title:  "Como ver o que nunca foi visto."
 date:   2022-09-09 14:30:14 -0300
 category: AI/ML
 color: info
-description: Como ver o que nunca foi visto. Entenda como Python ajudou a gerar a primeira imagem de um buraco negro
+description: Entenda como Python ajudou a gerar a primeira imagem de um buraco negro.
 hero_image: "./black-hole.jpg"
 hero_image_alt: "black hole first image"
 hero_image_credit_text: "Numpy"
@@ -26,22 +26,24 @@ buracos negros deram aos físicos novos insights sobre como esses objetos
 massivos se comportam, e inclusive, como eles realmente se parecem. 
 
 Embora os cientistas estejam pesquisando e teorizando buracos negros há décadas, 
-esta é a primeira imagem visual de um buraco negro. Esta imagem é o resultado 
-de um enorme esforço colaborativo através do EHT.
+o Gargantua é apenas uma reprodução artística de um buraco negro. Entretanto,
+graças a um esforço colaborativo da comunidade científica, a primeira imagem
+real de um buraco negro foi gerada.
 
 
 Neste artigo você irá descobrir:
 * O que é um buraco negro
 * Qual telescópio foi utilizado
 * Como a primeira imagem de um buraco negro foi gerada
-* Como fazer uma imulação de um buraco negro
+* Como simular um buraco negro
 
 # O que é um buraco negro?
 Buraco negro é uma região do espaço-tempo em que o campo gravitacional 
 é tão intenso que nada — nenhuma partícula ou radiação eletromagnética 
 como a luz — pode escapar. A teoria da relatividade geral prevê que 
 uma massa suficientemente compacta pode deformar o espaço-tempo para 
-formar um buraco negro.
+formar um buraco negro. Ele é formado por anéis de luzes ao redor de
+uma área densa e escura chamada de *sombra (shadow)*.
 
 # Quem é o autor da teoria de buraco negros?
 A ideia de um corpo tão massivo que nem a luz poderia escapar foi 
@@ -59,8 +61,9 @@ cerca de três vezes a massa do Sol, mostraram as equações, a força da
 gravidade supera todas as outras forças e produz um buraco negro. 
 
 # Qual o telescópio utilizado para ver o buraco negro?
-Em 10 de abril de 2019, a imagem direta de um buraco negro e 
-sua vizinhança foi publicada, após observações feitas pelo 
+Mais de 100 anos após a teoria da relatividade de einstein serem apresentadas,
+em 10 de abril de 2019, a imagem direta de um buraco negro e 
+sua vizinhança foi gerada, após observações feitas pelo 
 *Event Horizon Telescope* (EHT) em 2017 do buraco negro supermassivo no centro 
 galáctico de Messier 87.
 
@@ -72,8 +75,7 @@ de linha de base muito longa (VLBI), tem uma resolução angular de
 20 micro-segundos de arco – o suficiente para ler um jornal em Nova York 
 de um café na calçada em Paris!
 
-# Quais os desafios enfrentados para coletar os dados?
-![dataprocess](./dataprocessbh.png)
+# Quais os desafios enfrentados para gerar a imagem?
 O EHT apresenta enormes desafios de processamento de dados, incluindo 
 rápidas flutuações de fase atmosférica, grande largura de banda de 
 gravação e telescópios amplamente diferentes e geograficamente dispersos.
@@ -82,18 +84,82 @@ A cada dia, o EHT gera mais de 350 terabytes de observações,
 armazenadas em discos rígidos cheios de hélio. Reduzir o volume e a 
 complexidade de tantos dados é extremamente difícil.
 
+Por exemplo, como o EHT não é um único telescópio, mas uma rede de tipos 
+semelhantes de telescópios, há muito “ruído” ou diferentes tipos de erros 
+potenciais, que podem vir dos dados gerados pela rede do telescópio.
+
+“Uma das maiores fontes de ruído é o efeito atmosférico”, disse o Dr. Chan. 
+“Estamos olhando através da atmosfera para detectar a onda de rádio. Mas há 
+coisas como vapor de água, nuvens e turbulência na atmosfera que podem alterar o sinal. 
+Portanto, precisamos encontrar maneiras de remover esses efeitos na atmosfera”.
+
+Outro desafio enfrentado pelos cientistas do EHT é o movimento de rotação da Terra,
+que provoca pequenas alterações nos dados capturados pelos telescópios 
+que precisam ser corrigidos antes de serem analisados.
+
 > *Quando o objetivo é ver algo nunca antes visto, como os cientistas podem ter certeza de que a imagem está correta?*
 
 # Como a imagem do buraco negro foi gerada?
+A Figura 2 ilustra a metodologia utilizada para tirar foto do buraco negro M87.
+Cada telescópio do EHT capturam os dados gerados pelo buraco negro. Através dos
+algoritmos computacionais e astrofísicos os ruídos são removidos, os dados são calibrados
+e preparados para a próxima etapa. Após isso, o processo de análise, simulação 
+e geração da imagem é realizado usando o pacote *eht-imaging*, que será detalhado
+mais adiante.
 
 ![numpy_role](./bh_numpy_role.png)
-A Figura 1 ilustra a metodologia utilizada para tirar foto do buraco negro M87.
 
-O processo para geração da imagem é descrito a seguir.
+
+Observar o buraco negro com o EHT é um pouco como ouvir uma música tocada 
+em um piano com muitas teclas quebradas. Se o conjunto de telescópios do EHT fossem localizados 
+em todos os lugares do globo, daria para ouvir todas as notas possíveis e, assim, 
+ouvir uma versão perfeita da música. No entanto, como são apenas 8 telescópios dispostos em alguns 
+locais, somente é possível reconhecer a música que está sendo tocada com apenas algumas notas. 
+Embora ouvir uma música dessa maneira definitivamente não seja perfeito, muitas vezes 
+ainda há informações suficientes para acompanhar.
+
+Outra analogia intertessante de se fazer é quando escrevemos uma palavra ou expressão
+com algumas carectres trocados e ainda assim conseguimos reconhecer seu significado. 
+Por exemplo, a expressão bxraco nxgrx, é facilmente reconhecida.
+
+Mesmo que ainda houvesse muitas lacunas nas notas ou na expressão perto do final, é incrível que seu 
+cérebro possa preencher buracos e você possa começar a entender a música ou o siginificado da palvra. 
+O que seu cérebro estava fazendo aqui é muito semelhante ao que os algoritmos de 
+imagem que desenvolvemos para o EHT fazem. Usando os dados esparsos que foram coletados
+dos telescópios, os algoritmos preenchem as lacunas que faltam com a imagem mais natural.
+
+Mas vale apena salientar que sempre há alguma ambiguidade no que é a verdadeira imagem. 
+Por exemplo, mesmo que muitas notas estejam tocando, desde que algumas notas estejam faltando, 
+não precisa ser "A sinfonia do buraco negro". Quanto mais notas faltarem, mais ambiguidade haverá. 
+Na verdade, talvez perto do início você possa ter pensado que a música era a "sinfonia da galáxia de andrômeda". 
+Se as notas que estivessem disponíveis não fossem o suficiente, os cientistas do EHT estariam em apuros, 
+pois poderia existir várias músicas que se encaixam bastante bem nas notas disponíveis. 
+No entanto, à medida que aumentamos o número de notas (medidas), a música específica fica clara.
+
 ![possibilities](./infinite_possibilities.png)
+
+Da mesma forma, para o EHT, os dados que foram coletados contam apenas uma parte da 
+história, pois há um número infinito de imagens possíveis que são perfeitamente 
+consistentes com os dados que medimos. Mas nem todas as imagens são criadas iguais – 
+algumas se parecem mais com o que pensamos como imagens do que outras. 
+Para escolher a melhor imagem, basicamente todas as imagens infinitas que 
+explicam as medições do telescópio são classificadas de acordo com a sua 
+aparência razoável. Em seguida, é selecionada a imagem (ou conjunto de imagens) que 
+parece mais razoável.
+
 ![likely](./very_likely.png)
+
+Usando esse algoritmo, os pesquisadores são capazes de reconstruir imagens a partir de medições 
+muito esparsas medidas com o EHT. Abaixo está uma reconstrução de amostra feita 
+usando dados coletados do M87. 
 ![reconstruction](./reconstruction.png)
 
+O pacote Python *eht-imaging* utilizado para simular e reconstruir a imagem do buraco negro
+baseado nos parametros espaciais é composto por um conjunto de ferramentas conforme ilustra
+a Figura 6. Observe que a biblioteca *numpy* é a base para diversas outras bibliotecas
+envolvidas no projeto. A biblioteca *numpy* é eficiente para manipulação de vetores
+de N dimensões, que é um atributo essencial para os pesquisadores manipularem
+grandes base de dados númericas.
 ![ehtim](./ehtim_numpy.png)
 
 # Simulação de um buraco negro usando einsteinpy
@@ -110,6 +176,9 @@ volumes de dados. No entanto, com os projetos de código aberto no NumFOCUS,
 conseguimos iterar nossos algoritmos tão rápido que eles nos permitiram 
 terminar nosso trabalho em dois anos, o que seria difícil de alcançar se 
 usássemos apenas C.”, declara Dr. Chan.
+
+A biblioteca einsteinpy possui vários módulos que ajudam a entender e simular
+várias das ideias propostas por Einstein através de gráficos.
 
 ```
 import astropy.units as u
@@ -132,11 +201,41 @@ obj.show()
 # plt.show()
 ```
 
+As quatro primeiras linhas da Listagem 1 importam as bibliotecas necessárias
+para gerar a simulação de um buraco negro. A biblioteca astropy é uma coleção 
+de pacotes projetados para o uso em astronomia. Por sua vez, a biblioteca einsteinpy
+é uma coleção de pacotes dedicados a resolver problemas teoria da relatividade geral.
+Vale destacar a classe *Shadow* dentro do módulo *rays* responsável por reproduzir a área densa e escura do 
+buraco negro. A biblioteca matplotlib possui vários recursos para criar visualizações dos dados.
+
+Em seguida, os parametros `mass` e `fov` são configurados pois serão usados
+como argumentos no método construtor da classe *Shadow*. Depois, o objeto *shadow* é criado com 1000 raios.
+Então, os gráficos são gerados usando a classe *ShadowPlotter*. 
+
 ![blackhole1](./blackhole1.png)
+
+A classe ShadowPlotter, recebe como argumentos um objeto do tipo Shadow e um valor booleano *is_line_plot*. 
+O argumento booleando `is_line_plot` determina se o gráfico gerado será de intensidade, 
+caso verdadeiro, ou do próprio buraco negro caso seja falso.
+
 ![blackhole2](./blackhole2.png)
 
-
 # Considerações finais
+
+Nesse artigo você descobriu que a primeira imagem real de um buraco negro
+foi gerada graças a um esforço colaborativo entre centros de pesquisas quem compẽe
+o conjunto de telescópio EHT.
+
+Grandes desafios foram enfrentados para a coleta de dados tais como o grande volume
+de dados gerados pelos telescópios, efeitos atmosféricos, nuvens e vapor d'água.
+Para processamento desses dados foi uitlizada a linguagem Python, por possuir várias
+bibliotecas de código livre que facilitam a vida dos astrônomos, por exemplo, numpy, 
+matplotlib e astropy.
+
+Se você tem interesse nesse assunto, gostaria de fazer simulações físicas ou se interessa por algum outro campo científico
+que envolva cálculos matemáticos complexos e manipulação de vetores e matrizes, vale a pena
+conferir as bibliotecas.
+
 # Referências
 
 [REPOSITÓRIO EHT-IMAGING](https://github.com/achael/eht-imaging)
@@ -150,6 +249,10 @@ obj.show()
 [Numpy](https://numpy.org/case-studies/blackhole-image/)
 
 [Astropy](https://www.astropy.org/)
+
+[matplotlib](https://matplotlib.org/stable/index.html)
+
+[einsteinpy](https://einsteinpy.org/)
 
 [Buraco Negro - Wikipedia](https://pt.wikipedia.org/wiki/Buraco_negro)
 

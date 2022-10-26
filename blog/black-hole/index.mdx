@@ -101,13 +101,34 @@ que precisam ser corrigidos antes de serem analisados.
 
 # Como a imagem do buraco negro foi gerada?
 A Figura 2 ilustra a metodologia utilizada para tirar foto do buraco negro M87.
-Cada telescópio do EHT capturam os dados gerados pelo buraco negro. Através dos
-algoritmos computacionais e astrofísicos os ruídos são removidos, os dados são calibrados
-e preparados para a próxima etapa. Após isso, o processo de análise, simulação 
-e geração da imagem é realizado usando o pacote *eht-imaging*, que será detalhado
-mais adiante.
+Cada telescópio do EHT capturam a radiação eletromagnética gerada pelo buraco negro M87 durante
+a campanha dos dias 5, 10, 6 e 11 de abril do ano de 2017. Através dos
+algoritmos computacionais e astrofísicos foi feita a correlação dos dados entre os
+telescópios envolvidos, e os dados são calibrados
+e preparados para a próxima etapa removendo os ruídos causados pelo clima. 
+Após isso, o processo de análise, simulação e reconstrução da imagem foi realizado usando 
+ferramentas computacionais, que serão detalhadas mais adiante.
 
-![numpy_role](./bh_numpy_role.png)
+Para garantir que não houvesse manipulação e enviesamento na reconstrução das imagens, o 
+a etapa de reconstrução foi dividida em duas fases. Na primeira, o grupo de pesquisadores se dividiu 
+em 4 times independentes que trabalharam sem comunicação entre si. Os times 1 e 2 usaram
+o metodo Regularized Maximum Likelyhood (RML) e os times 3 e 4 usaram o método CLEAN.
+Todas as imagens reconstruidas pelos 4 times apresentaram morfologias semelhantes,
+embora a reconstrução apresente diferenças em relação a coloração.
+
+Na segunda fase, uma validação cruzada no procedimento de seleção dos parametros foi realizada.
+Primeiramente, quatro fontes de dados primitivas foram geradas: um anel, um anel crescente, um disco, e uma dupla de objetos.
+Para cada reconstrução da fonte de dados, os parametros selecionados não levava em consideração
+os parametros da fonte específica. Por exemplo, para reconstruir a imagem do disk, somente
+os parametros relacionados ao anel, ao crescente e a dupla de objetos foram selecionados.
+A reconstrução de cada fonte foi realizada usando três ferramentas distintas: DIFMAP, eht-imaging, SMILI.
+A primeira ferramenta foi criada em c, e as duas ultimas foram construídas usando Python.
+
+Além das fontes de dados primitivas, foi gerada uma simulação de buraco negro usando 
+modelos físicos baseados na magneto-hidrodinâmica da relatividade geral (GRMHD).
+A reconstrução dessa simulação usou os mesmos parâmetros usados para reconstruir o M87.
+
+![etapaseht](./etapaseht.png)
 
 
 Observar o buraco negro com o EHT é um pouco como ouvir uma música tocada 
@@ -240,9 +261,19 @@ conferir as bibliotecas.
 
 [REPOSITÓRIO EHT-IMAGING](https://github.com/achael/eht-imaging)
 
-[First M87 Event Horizon Telescope Results paper](https://arxiv.org/abs/1906.11241)
+[First M87 Event Horizon Telescope Results. I. The Shadow of the Supermassive Black Hole](https://iopscience.iop.org/article/10.3847/2041-8213/ab0ec7)
+
+[First M87 Event Horizon Telescope Results. II. Array and Instrumentation](https://iopscience.iop.org/article/10.3847/2041-8213/ab0c96/pdf)
 
 [First M87 Event Horizon Telescope Results. III. Data Processing and Calibration](https://iopscience.iop.org/article/10.3847/2041-8213/ab0c57/meta)
+
+[First M87 Event Horizon Telescope Results. IV. Imaging the Central Supermassive Black Hole](https://iopscience.iop.org/article/10.3847/2041-8213/ab0e85/pdf)
+
+[First M87 Event Horizon Telescope Results. V. Physical Origin of the Asymmetric Ring](https://iopscience.iop.org/article/10.3847/2041-8213/ab0f43/pdf)
+
+[First M87 Event Horizon Telescope Results. VI. The Shadow and Mass of the Central Black Hole](https://arxiv.org/pdf/1906.11243.pdf)
+
+[Event Horizon Telescop](https://en.wikipedia.org/wiki/Event_Horizon_Telescope)
 
 [Aniversário do filme Interstellar](https://www.businessinsider.com/interstellar-anniversary-learned-about-black-holes-2019-11)
 
@@ -258,6 +289,17 @@ conferir as bibliotecas.
 
 [Numfocus black hole](https://numfocus.org/case-studies/first-photograph-black-hole)
 
-[Schwarzschild_metric] (https://en.wikipedia.org/wiki/Schwarzschild_metric)
+[Schwarzschild_metric](https://en.wikipedia.org/wiki/Schwarzschild_metric)
 
 [How to take a picture of a black hole | Katie Bouman](https://www.youtube.com/watch?v=BIvezCVcsYs)
+
+
+# colocar imagem do kip thorne ok
+# critério para se formar um buraco negro 
+# nome dos centros de pesquisa ok
+# dividir a metodologia em slides separados ok
+# melhorar a resolução das imagens ok
+# mapear as ferramentas com suas funcionalidades ok
+# fazer correlação com o artigo ok
+# imagem das bibliotecas ok
+# melhorar imagem da metodologia

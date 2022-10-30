@@ -13,7 +13,6 @@ import Typography from '@mui/material/Typography';
 import Container from '@mui/material/Container';
 import Rating from '@mui/material/Rating';
 import Seo from '../components/seo';
-import { OutboundLink } from "gatsby-plugin-google-gtag"
 
 const tiers = [
   {

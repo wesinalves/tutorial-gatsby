@@ -12,10 +12,18 @@ import { hoverLink } from '../pages/styles.module.css';
 import Grid from '@mui/material/Grid';
 import Stack from '@mui/material/Stack';
 import SEO from '../components/seo';
+import { Disqus, CommentCount } from 'gatsby-plugin-disqus'
 
 const BlogPost = ({ data, pageContext }) => {    
     const next = pageContext.next
-    const previous = pageContext.previous
+    const previous = pageContext.previous        
+    let disqusConfig = {
+        url: 'engmoderno.com.br' + pageContext.slug,
+        identifier: data.mdx.id,
+        title: data.mdx.frontmatter.title,
+        category_id: 'blog',
+    }
+    
 
     return (
         <Layout pageTitle={data.mdx.frontmatter.title}>
@@ -70,8 +78,11 @@ const BlogPost = ({ data, pageContext }) => {
                             </Grid>
                         </Grid>
                     </Paper>
-                    )}
-            </Stack>            
+                    )}                
+            </Stack>
+            <CommentCount config={disqusConfig} placeholder={'...'} />
+            /* Post Contents */
+            <Disqus config={disqusConfig} />            
             </Container>
 
         </Layout>
@@ -82,7 +93,8 @@ export const query = graphql`
     query ($slug: String) {
         mdx(fields: {slug: {eq: $slug}}) {
         body
-        frontmatter {
+        id
+        frontmatter {            
             title
             date(formatString: "MMMM D, YYYY")
             hero_image_alt

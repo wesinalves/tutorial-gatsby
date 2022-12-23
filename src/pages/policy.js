@@ -17,8 +17,8 @@ const PolicyPage = () => {
                 <Header name='Política de Privacidade' links={[{path: '/', description:'Home'}]}/>                
                 <Box>
                 <h2>Privacidade</h2>
-                <p>A sua privacidade é importante para nós. É política do wesinribeiro.com respeitar 
-                a sua privacidade em relação a qualquer informação sua que possamos coletar no site <Link to='/'>wesinribeiro.com</Link>, e outros sites que possuímos 
+                <p>A sua privacidade é importante para nós. É política do engmoderno.com.br respeitar 
+                a sua privacidade em relação a qualquer informação sua que possamos coletar no site <Link to='/'>engmoderno.com.br</Link>, e outros sites que possuímos 
                 e operamos.</p>                    
                 <p>Solicitamos informações pessoais apenas quando realmente precisamos delas para lhe 
                 fornecer um serviço. Fazemo-lo por meios justos e legais, com o seu conhecimento e 
@@ -37,7 +37,7 @@ const PolicyPage = () => {
                 <p>O uso continuado de nosso site será considerado como aceitação de nossas práticas 
                 em torno de privacidade e informações pessoais. Se você tiver alguma dúvida sobre como 
                 lidamos com dados do usuário e informações pessoais, entre em contacto connosco.</p>
-                <h2>Política de Cookies wesinribeiro.com</h2>
+                <h2>Política de Cookies engmoderno.com.br</h2>
                 <h3>O que são cookies?</h3>
                 <p>Como é prática comum em quase todos os sites profissionais, este site usa cookies, 
                 que são pequenos arquivos baixados no seu computador, para melhorar sua experiência. 
@@ -114,12 +114,12 @@ const PolicyPage = () => {
                 o melhor preço possível.</li> </ul>
                 <h3>Compromisso do Usuário</h3>
                 <p>O usuário se compromete a fazer uso adequado dos conteúdos e da informação que o 
-                wesinribeiro.com oferece no site e com caráter enunciativo, mas não limitativo:</p>
+                engmoderno.com.br oferece no site e com caráter enunciativo, mas não limitativo:</p>
                 <ul><li>A) Não se envolver em atividades que sejam ilegais ou contrárias à boa fé a à 
                 ordem pública;</li>
                 <li>B) Não difundir propaganda ou conteúdo de natureza racista, xenofóbica, 
                 qualquer tipo de pornografia ilegal, de apologia ao terrorismo ou contra os direitos humanos;</li> 
-                <li>C) Não causar danos aos sistemas físicos (hardwares) e lógicos (softwares) do wesinribeiro.com, 
+                <li>C) Não causar danos aos sistemas físicos (hardwares) e lógicos (softwares) do engmoderno.com.br, 
                 de seus fornecedores ou terceiros, para introduzir ou disseminar vírus informáticos ou quaisquer 
                 outros sistemas de hardware ou software que sejam capazes de causar danos anteriormente mencionados.</li>
                 </ul>

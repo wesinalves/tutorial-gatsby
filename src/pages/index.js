@@ -13,6 +13,7 @@ import Typography from '@mui/material/Typography';
 import Container from '@mui/material/Container';
 import Rating from '@mui/material/Rating';
 import Seo from '../components/seo';
+import { navigate } from "gatsby"
 
 const tiers = [
   {
@@ -134,8 +135,7 @@ const IndexPage = () => {
             </Grid>            
             <Grid item >                                
                 <Button fullwidth variant="contained" color="secondary" 
-                href="https://www.udemy.com/course/como-programar-em-python/" 
-                target="_blank" >                     
+                onClick={() => navigate("/python")} >                     
                     Aprenda Python                     
                 </Button>
             </Grid>            

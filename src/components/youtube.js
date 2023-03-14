@@ -3,9 +3,9 @@ import PropTypes from "prop-types";
 import Container from '@mui/material/Container';
 
 const YoutubeEmbed = ({ embedId }) => (
-    <Container>
+    <Container maxWidth="md">
         <iframe
-            width="853"
+            width="100%"
             height="480"
             src={`https://www.youtube.com/embed/${embedId}`}
             frameBorder="0"

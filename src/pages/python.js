@@ -145,7 +145,7 @@ const AprendaPython = () => {
                 { Benefits.map((benefit) => (
                     <ListItem disablePadding>
                         <ListItemIcon>
-                            <Done />
+                            <Done color="primary" />
                         </ListItemIcon>
                         <ListItemText>
                             {benefit.text}

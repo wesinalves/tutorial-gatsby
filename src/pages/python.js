@@ -83,7 +83,7 @@ const AprendaPython = () => {
     return (
         <Layout pageTitle='Aprenda Python'>
             <Seo 
-                title='Aprenda python'
+                title='Python'
                 description='Python é o novo inglês'
             />
             <Container disableGutters maxWidth="md" component="main">

@@ -4,11 +4,7 @@ import Header from '../components/header';
 import Typography from '@mui/material/Typography';
 import Container from '@mui/material/Container';
 import Grid from '@mui/material/Grid';
-import Accordion from '@mui/material/Accordion';
 import Button from '@mui/material/Button';
-import AccordionSummary from '@mui/material/AccordionSummary';
-import AccordionDetails from '@mui/material/AccordionDetails';
-import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
 import Box from '@material-ui/core/Box';
 import Chip from '@material-ui/core/Chip';
 import Seo from '../components/seo';
@@ -18,8 +14,7 @@ import ListItemText from '@mui/material/ListItemText';
 import ListItemIcon from '@mui/material/ListItemIcon';
 import YoutubeEmbed from "../components/youtube";
 import { Done } from '@mui/icons-material';
-import { StaticImage } from 'gatsby-plugin-image'
-import { imagePerfil } from './styles.module.css';
+import { StaticImage } from 'gatsby-plugin-image';
 
 const Topics = [
     {
@@ -143,7 +138,7 @@ const AprendaPython = () => {
                 <Typography variant="h5" align="left" color="text.secondary" component="p" sx={{ml: 1, mb: 2, mt: 1}}>
                     Benefícios:
                 </Typography>
-                <Grid container justifyContent='space-between' sx={{ mb: 1}} spacing={2}>
+                <Grid container justifyContent='space-around' sx={{ mb: 1}} spacing={2} >
                     <Grid item>
                         <List>
                         { Benefits.map((benefit) => (
@@ -172,8 +167,7 @@ const AprendaPython = () => {
                 <Typography variant="h5" align="left" color="text.secondary" component="p" sx={{ml: 1, mb: 2, mt: 1}}>
                     Quem sou eu?
                 </Typography>
-                
-                <Grid container justifyContent='space-between' sx={{ mb: 1}} spacing={2}>                                       
+                <Grid container justifyContent='space-around' sx={{ mb: 1}} spacing={2} >                                       
                     <Grid item>
                         <StaticImage
                             alt="Breve resumo"
@@ -182,20 +176,13 @@ const AprendaPython = () => {
 
                         />
                     </Grid>
-                    <Grid item sx={{width: "60%"}} >                        
-                        <Typography variant="h5" color="text.primary" component="div">
+                    <Grid item maxWidth='sm' >                        
+                        <Typography variant="h5" color="text.primary" component="p" sx={{ml: 1}}>
                             Servidor público federal com mais de 15 anos de experiência na área de tecnologia.
                             Possuo graduação em engenharia da computação, além de mestrado e doutorado em computação aplicada.
                         </Typography>
                     </Grid>
-
                 </Grid>
-
-                
-
-                
-                                
-
                 <Grid container justifyContent='center' sx={{ mb: 1, mt: 1}} spacing={2}>
                     <Grid item >                
                         <Button fullwidth variant="contained" color="secondary" 

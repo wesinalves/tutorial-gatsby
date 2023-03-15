@@ -83,11 +83,11 @@ const AprendaPython = () => {
     return (
         <Layout pageTitle='Aprenda Python'>
             <Seo 
-                title='Python'
+                title='Aprenda python'
                 description='Python é o novo inglês'
             />
             <Container disableGutters maxWidth="md" component="main">
-                <Header name="Aprenda Python" links={[{path: '/', description: 'Home'}]}/>
+                <Header name="Aprenda Python" links={[{path: '/', description: 'Home'}]} />
                 <Typography variant="body1" align="left" color="text.secondary" component="p" sx={{ml: 1, mb: 2}}>
                     Quer aprender a programar utilizando uma linguagem extremamente poderosa e versátil,
                     utilizada por grandes coorporações ao redor do mundo?

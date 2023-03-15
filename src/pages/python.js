@@ -18,6 +18,8 @@ import ListItemText from '@mui/material/ListItemText';
 import ListItemIcon from '@mui/material/ListItemIcon';
 import YoutubeEmbed from "../components/youtube";
 import { Done } from '@mui/icons-material';
+import { StaticImage } from 'gatsby-plugin-image'
+import { imagePerfil } from './styles.module.css';
 
 const Topics = [
     {
@@ -68,7 +70,7 @@ const Benefits = [
         text: 'Conteúdo atualizado',        
     },
     {
-        text: 'Aprendizado no seu ritmo',        
+        text: 'Aprenda no seu ritmo',        
     },
     {
         text: 'Acesso vitalício',        
@@ -77,7 +79,7 @@ const Benefits = [
         text: 'Assista pela TV ou dispositivos móveis',        
     },
     {
-        text: 'Certtificado de conclusão',        
+        text: 'Certificado de conclusão',        
     },
 
 ]
@@ -141,18 +143,57 @@ const AprendaPython = () => {
                 <Typography variant="h5" align="left" color="text.secondary" component="p" sx={{ml: 1, mb: 2, mt: 1}}>
                     Benefícios:
                 </Typography>
-                <List>
-                { Benefits.map((benefit) => (
-                    <ListItem disablePadding>
-                        <ListItemIcon>
-                            <Done color="primary" />
-                        </ListItemIcon>
-                        <ListItemText>
-                            {benefit.text}
-                        </ListItemText>
-                </ListItem>
-                ))}                    
-                </List>
+                <Grid container justifyContent='space-between' sx={{ mb: 1}} spacing={2}>
+                    <Grid item>
+                        <List>
+                        { Benefits.map((benefit) => (
+                            <ListItem disablePadding>
+                                <ListItemIcon>
+                                    <Done color="primary" />
+                                </ListItemIcon>
+                                <ListItemText>
+                                    {benefit.text}
+                                </ListItemText>
+                        </ListItem>
+                        ))}                    
+                        </List>
+                    </Grid>
+                    <Grid item>
+                        <StaticImage
+                            alt="Benefícios de programar em python."
+                            src="../images/join.png"                    
+                            width={300}                    
+
+                        />
+                    </Grid>
+
+                </Grid>
+
+                <Typography variant="h5" align="left" color="text.secondary" component="p" sx={{ml: 1, mb: 2, mt: 1}}>
+                    Quem sou eu?
+                </Typography>
+                
+                <Grid container justifyContent='space-between' sx={{ mb: 1}} spacing={2}>                                       
+                    <Grid item>
+                        <StaticImage
+                            alt="Breve resumo"
+                            src="../images/resume.png"                    
+                            width={300}                    
+
+                        />
+                    </Grid>
+                    <Grid item sx={{width: "60%"}} >                        
+                        <Typography variant="h5" color="text.primary" component="div">
+                            Servidor público federal com mais de 15 anos de experiência na área de tecnologia.
+                            Possuo graduação em engenharia da computação, além de mestrado e doutorado em computação aplicada.
+                        </Typography>
+                    </Grid>
+
+                </Grid>
+
+                
+
+                
                                 
 
                 <Grid container justifyContent='center' sx={{ mb: 1, mt: 1}} spacing={2}>

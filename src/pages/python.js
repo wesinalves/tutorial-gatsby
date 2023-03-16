@@ -84,7 +84,9 @@ const AprendaPython = () => {
         <Layout pageTitle='Aprenda Python'>
             <Seo 
                 title='Aprenda python'
-                description='Python é o novo inglês'                
+                description='Python é o novo inglês. Python é uma linguagem de programação de alto nível, fácil de aprender e usar, 
+                com uma ampla variedade de aplicações, desde desenvolvimento web até aprendizado de máquina. É uma escolha popular para 
+                iniciantes e programadores experientes.'                
             />
             <Container disableGutters maxWidth="md" component="main">
                 <Header name="Aprenda Python" links={[{path: '/', description: 'Home'}]} />
@@ -105,9 +107,8 @@ const AprendaPython = () => {
                 </Grid>
                 <Typography variant="body1" align="left" color="text.secondary" component="p" sx={{ml: 1, mb: 2}}>
                     Python é uma linguagem de programação de alto nível, fácil de aprender e usar, 
-                    com uma ampla variedade de aplicativos, desde desenvolvimento web e aplicativos de desktop 
-                    até ciência de dados e aprendizado de máquina. É uma escolha popular para 
-                    iniciantes e experientes programadores.
+                    com uma ampla variedade de aplicações, desde desenvolvimento web até aprendizado de máquina. É uma escolha popular para 
+                    iniciantes e programadores experientes.
                 </Typography>
                 <Typography variant="body1" align="left" color="text.secondary" component="p" sx={{ml: 1, mb: 2}}>
                     Nesse curso, você vai aprender a programar em Python sem enrolação, com uma abordagem

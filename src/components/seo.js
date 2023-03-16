@@ -29,7 +29,7 @@
    const metaDescription = description || site.siteMetadata.description
  
    const url = site.siteMetadata.siteUrl
-   const ogImage = `${url}${image || "https://engmoderno.com.br/static/b69278bbe92525cbd0007231d5cea186/0ee65/perfil2.webp"}`
+   const ogImage = `${url}${image || "/static/b69278bbe92525cbd0007231d5cea186/0ee65/perfil2.webp"}`
  
    return (
      <Helmet

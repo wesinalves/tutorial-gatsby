@@ -15,7 +15,7 @@ const AboutPage = () => {
         <Layout pageTitle="Sobre mim">
             <Seo
                 title='Sobre'
-                description='Página Sobre'            
+                description='Engenheiro da computação que adora programar em Python'            
             />
             <Container disableGutters maxWidth="md" component="main" >                
                 <Header name="Sobre" links={[{path: '/', description: 'Home'}]} />

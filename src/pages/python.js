@@ -84,9 +84,7 @@ const AprendaPython = () => {
         <Layout pageTitle='Aprenda Python'>
             <Seo 
                 title='Aprenda python'
-                description='Python é o novo inglês. Python é uma linguagem de programação de alto nível, fácil de aprender e usar, 
-                com uma ampla variedade de aplicações, desde desenvolvimento web até aprendizado de máquina. É uma escolha popular para 
-                iniciantes e programadores experientes.'                
+                description='Aprenda os fundamentos da programação em Python'
             />
             <Container disableGutters maxWidth="md" component="main">
                 <Header name="Aprenda Python" links={[{path: '/', description: 'Home'}]} />

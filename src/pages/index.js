@@ -107,7 +107,7 @@ const IndexPage = () => {
     <Layout pageTitle="Home Page">
         <Seo
             title='Home'
-            description='Home Page'            
+            description='Engenheiro da computação que adora programar em Python'            
         />
       {/* Hero unit */}
       <Container disableGutters maxWidth="sm" component="main" sx={{ pt: 4, pb: 6, display: 'flex', flexDirection: 'column', alignItems: 'center' }}>

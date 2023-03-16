@@ -10,8 +10,8 @@ const PolicyPage = () => {
     return(
         <Layout pageTitle="Política de Privacidade">
             <Seo
-                title='Poliítica de Privacidade'
-                description='Página de política de privacidade'            
+                title='Política de Privacidade'
+                description='Política de privacidade do site engmoderno.com.br'            
             />
             <Container disableGutters maxWidth="md" component="main" >
                 <Header name='Política de Privacidade' links={[{path: '/', description:'Home'}]}/>                

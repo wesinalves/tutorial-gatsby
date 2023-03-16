@@ -11,7 +11,7 @@ const TermPage = () => {
         <Layout pageTitle="Política de Privacidade">
             <Seo
                 title='Termso de Uso'
-                description='Página de política de privacidade'            
+                description='Termos de uso do site engmoderno.com.br'            
             />
             <Container disableGutters maxWidth="md" component="main" >
                 <Header name='Termos' links={[{path: '/', description:'Home'}]}/>

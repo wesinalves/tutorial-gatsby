@@ -106,7 +106,7 @@ const IndexPage = () => {
   return (
     <Layout pageTitle="Home Page">
         <Seo
-            title='Home'
+            title='Home page de engmoderno.com.br'
             description='Engenheiro da computação que adora programar em Python'            
         />
       {/* Hero unit */}

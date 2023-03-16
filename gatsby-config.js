@@ -4,10 +4,10 @@ const queries = require("./src/utils/algolia_queries");
 
 module.exports = {
     siteMetadata: {
-      title: `Portfólio Online`,
+      title: `Engenheiro Moderno`,
       siteUrl: `https://www.engmoderno.com.br`,
       author: `Wesin Alves`,
-      description: `Portfólio online de Wesin Alves.`,
+      description: `Portfólio online de Engenheiro Moderno.`,
     },
     plugins: [
       "gatsby-plugin-image",

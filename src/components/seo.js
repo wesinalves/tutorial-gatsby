@@ -29,7 +29,7 @@
    const metaDescription = description || site.siteMetadata.description
  
    const url = site.siteMetadata.siteUrl
-   const ogImage = `${url}${image || "/static/assets/img/bokeh-cover-bg"}`
+   const ogImage = `${url}${image || "https://engmoderno.com.br/static/b69278bbe92525cbd0007231d5cea186/0ee65/perfil2.webp"}`
  
    return (
      <Helmet
@@ -57,8 +57,12 @@
          },
          {
            property: `og:type`,
-           content: `website`,
+           content: `article`,
          },
+         {
+          property: `og:url`,
+          content: url,
+        },
          {
            name: `twitter:card`,
            content: `summary_large_image`,

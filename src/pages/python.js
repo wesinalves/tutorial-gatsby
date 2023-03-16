@@ -84,7 +84,7 @@ const AprendaPython = () => {
         <Layout pageTitle='Aprenda Python'>
             <Seo 
                 title='Aprenda python'
-                description='Python é o novo inglês'
+                description='Python é o novo inglês'                
             />
             <Container disableGutters maxWidth="md" component="main">
                 <Header name="Aprenda Python" links={[{path: '/', description: 'Home'}]} />

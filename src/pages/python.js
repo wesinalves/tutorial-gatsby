@@ -46,6 +46,10 @@ const Topics = [
         description: 'Trabalhe com herança, polimorfismo e interfaces.'
     },
     {
+        title: 'Tratamento de exceção',
+        description: 'Previna erros em seu programa com o bloco de tratamento de exceção.'
+    },
+    {
         title: 'Github',
         description: 'Repositório e controle de versão do seu código fonte.'
     },

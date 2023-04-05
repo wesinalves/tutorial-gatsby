@@ -87,5 +87,17 @@ module.exports = {
           shortname: `wesinalves`
         }
       },
+      {
+        resolve: `gatsby-plugin-manifest`,
+        options: {
+          name: `Engenheiro Moderno`,
+          short_name: `Engmoderno`,
+          start_url: `/`,
+          icon: "src/images/perfil2.png",
+          background_color: `#fffff`,
+          theme_color: `#ffffff`,
+          display: `standalone`,
+        },
+      },
     ]
 }

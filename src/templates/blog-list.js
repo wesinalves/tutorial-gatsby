@@ -137,10 +137,14 @@ export const query = graphql`
         ) {
             edges {
                 next {
-                  slug
+                  fields{
+                    slug
+                  }
                 }
                 previous {
-                  slug
+                  fields{
+                    slug
+                  }
                 }
                 node {
                   frontmatter {
@@ -157,7 +161,9 @@ export const query = graphql`
                     title
                   }
                   id
-                  slug
+                  fields{
+                    slug
+                  }
                 }
             }
         }

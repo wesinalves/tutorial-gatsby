@@ -37,11 +37,12 @@ exports.createPages = ({ graphql, actions }) => {
     return graphql(`
     query loadSlugQuery ($limit: Int!){
         allMdx(
-            sort: { fields: [frontmatter___date], order: DESC }
+            sort: { frontmatter: { date: DESC }}
             limit: $limit
         ) {
             edges {
                 node {
+                    id
                     fields {
                         slug
                     }
@@ -52,6 +53,9 @@ exports.createPages = ({ graphql, actions }) => {
                               gatsbyImageData(width: 100, height: 100)
                             }
                         }
+                    }
+                    internal {
+                        contentFilePath
                     }
                 }
             }
@@ -67,8 +71,9 @@ exports.createPages = ({ graphql, actions }) => {
             // previous and next are objects props sent as pageContect object to blogPostTemplate
             createPage({
                 path: post.node.fields.slug,
-                component: blogPostTemplate,
+                component: `${blogPostTemplate}?__contentFilePath=${post.node.internal.contentFilePath}`,
                 context: {
+                    id: post.node.id,
                     slug: post.node.fields.slug,
                     previous,
                     next,

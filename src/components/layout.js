@@ -12,9 +12,9 @@ import Container from '@mui/material/Container';
 import { hoverLink, navLink } from './layout.module.css'
 import { ThemeProvider } from '@mui/material/styles';
 import { createTheme } from '@mui/material';
-import grey from '@material-ui/core/colors/grey';
-import green from '@material-ui/core/colors/green';
-import red from '@material-ui/core/colors/red';
+import grey from '@mui/material/colors/grey';
+import green from '@mui/material/colors/green';
+import red from '@mui/material/colors/red';
 import SearchIcon from '@mui/icons-material/Search';
 import useScrollTrigger from '@mui/material/useScrollTrigger';
 import Fab from '@mui/material/Fab';

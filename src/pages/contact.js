@@ -2,7 +2,7 @@ import * as React from 'react';
 import Layout from '../components/layout';
 import Typography from '@mui/material/Typography';
 import Container from '@mui/material/Container';
-import Box from '@material-ui/core/Box';
+import Box from '@mui/material/Box';
 import Breadcrumbs from '@mui/material/Breadcrumbs';
 import { Link } from 'gatsby';
 import { hoverLink } from './styles.module.css';

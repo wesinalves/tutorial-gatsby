@@ -1,7 +1,7 @@
 import * as React from 'react';
 import Layout from '../components/layout';
 import Container from '@mui/material/Container';
-import Box from '@material-ui/core/Box';
+import Box from '@mui/material/Box';
 import { Link } from 'gatsby';
 import Seo from '../components/seo';
 import Header from '../components/header';

@@ -7,7 +7,7 @@ import Accordion from '@mui/material/Accordion';
 import AccordionSummary from '@mui/material/AccordionSummary';
 import AccordionDetails from '@mui/material/AccordionDetails';
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
-import Box from '@material-ui/core/Box';
+import Box from '@mui/material/Box';
 import Seo from '../components/seo';
 
 const AboutPage = () => {

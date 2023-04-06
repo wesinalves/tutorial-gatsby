@@ -1,20 +1,22 @@
 import * as React from 'react';
-import Layout from '../components/layout';
-import Header from '../components/header';
+import { StaticImage } from 'gatsby-plugin-image';
+
 import Typography from '@mui/material/Typography';
 import Container from '@mui/material/Container';
 import Grid from '@mui/material/Grid';
 import Button from '@mui/material/Button';
 import Box from '@mui/material/Box';
 import Chip from '@mui/material/Chip';
-import Seo from '../components/seo';
 import List from '@mui/material/List';
 import ListItem from '@mui/material/ListItem';
 import ListItemText from '@mui/material/ListItemText';
 import ListItemIcon from '@mui/material/ListItemIcon';
-import YoutubeEmbed from "../components/youtube";
 import { Done } from '@mui/icons-material';
-import { StaticImage } from 'gatsby-plugin-image';
+
+import Layout from '../components/layout';
+import Header from '../components/header';
+import Seo from '../components/seo';
+import YoutubeEmbed from "../components/youtube";
 
 const Topics = [
     {

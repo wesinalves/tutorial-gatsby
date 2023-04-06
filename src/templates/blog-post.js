@@ -1,20 +1,22 @@
 import * as React from 'react'
 import { graphql } from 'gatsby'
-import { MDXRenderer } from 'gatsby-plugin-mdx'
+import { Link } from 'gatsby'
 import { GatsbyImage, getImage } from 'gatsby-plugin-image'
-import Layout from '../components/layout';
-import Header from '../components/header';
+//import { MDXRenderer } from 'gatsby-plugin-mdx'
+import { Disqus, CommentCount } from 'gatsby-plugin-disqus'
+
 import Container from '@mui/material/Container'
 import Paper from '@mui/material/Paper';
 import Typography from '@mui/material/Typography';
-import { Link } from 'gatsby'
-import { hoverLink } from '../pages/styles.module.css';
 import Grid from '@mui/material/Grid';
 import Stack from '@mui/material/Stack';
-import SEO from '../components/seo';
-import { Disqus, CommentCount } from 'gatsby-plugin-disqus'
 
-const BlogPost = ({ data, pageContext }) => {    
+import Layout from '../components/layout';
+import Header from '../components/header';
+import Seo from '../components/seo';
+import { hoverLink } from '../pages/styles.module.css';
+
+const BlogPost = ({ data, pageContext, children }) => {    
     const next = pageContext.next
     const previous = pageContext.previous        
     let disqusConfig = {
@@ -27,7 +29,7 @@ const BlogPost = ({ data, pageContext }) => {
 
     return (
         <Layout pageTitle={data.mdx.frontmatter.title}>
-            <SEO
+            <Seo
                 title={data.mdx.frontmatter.title}
                 description={data.mdx.frontmatter.description}
                 image={data.mdx.frontmatter.image}
@@ -35,10 +37,8 @@ const BlogPost = ({ data, pageContext }) => {
             <Container maxWidth="md" component="main">
                 <Header name={data.mdx.frontmatter.title} links={[{path: '/', description: 'Home'}, {path: '/blog', description: 'Blog'}]} />
                 <Paper elevation={3} sx={{p: 1, color: 'text.secondary'}}>
-                    <p>{data.mdx.frontmatter.date}</p>            
-                    <MDXRenderer>
-                        {data.mdx.body}                
-                    </MDXRenderer>
+                    <p>{data.mdx.frontmatter.date}</p>                                
+                    {children}                     
                 </Paper>
                 <Stack spacing={2} direction="row" justifyContent="space-between" sx={{mt: 1}}>
                 {previous && (
@@ -81,33 +81,32 @@ const BlogPost = ({ data, pageContext }) => {
                     )}                
             </Stack>
             <CommentCount config={disqusConfig} placeholder={'...'} />
-            /* Post Contents */
-            <Disqus config={disqusConfig} />            
+            {/* Post Contents */}
+            <Disqus config={disqusConfig} />
             </Container>
 
         </Layout>
     )
 }
 
+
 export const query = graphql`
     query ($slug: String) {
-        mdx(fields: {slug: {eq: $slug}}) {
-        body
-        id
-        frontmatter {            
-            title
-            date(formatString: "MMMM D, YYYY")
-            hero_image_alt
-            hero_image_credit_link
-            hero_image_credit_text
-            hero_image {
-              childImageSharp {
-                gatsbyImageData
-              }
+        mdx(fields: {slug: {eq: $slug}}) {        
+            id
+            frontmatter {            
+                title
+                date(formatString: "MMMM D, YYYY")
+                hero_image_alt
+                hero_image_credit_link
+                hero_image_credit_text
+                hero_image {
+                    childImageSharp {
+                        gatsbyImageData
+                    }
+                }
             }
-        }
         }
     }
 `
-
 export default BlogPost

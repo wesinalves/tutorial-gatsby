@@ -1,17 +1,19 @@
 import * as React from 'react';
 import { graphql } from 'gatsby';
-import Layout from '../components/layout';
-import Header from '../components/header';
 import { Link } from 'gatsby'
+import { GatsbyImage, getImage } from 'gatsby-plugin-image';
+
 import Container from '@mui/material/Container';
 import Paper from '@mui/material/Paper';
 import Stack from '@mui/material/Stack';
 import Typography from '@mui/material/Typography';
 import Chip from '@mui/material/Chip';
-import { GatsbyImage, getImage } from 'gatsby-plugin-image';
-import { blogItem, hoverLink } from '../pages/styles.module.css';
 import Box from '@mui/material/Box';
 import Grid from '@mui/material/Grid';
+
+import Layout from '../components/layout';
+import Header from '../components/header';
+import { blogItem } from '../pages/styles.module.css';
 import Seo from '../components/seo';
 
 const BlogList = ({ data, pageContext }) => {
@@ -48,7 +50,7 @@ const BlogList = ({ data, pageContext }) => {
                                             size="small"
                                             variant="outlined"
                                         />
-                                        <Link to={`/blog/${edge.node.slug}`}>
+                                        <Link to={`${edge.node.fields.slug}`}>
                                             <Typography component='h1' variant='h4' color='primary'>
                                                 {edge.node.frontmatter.title}
                                             </Typography>
@@ -129,9 +131,11 @@ const BlogList = ({ data, pageContext }) => {
     )
 }
 
+export default BlogList
+
 export const query = graphql`
     query blogPageQuery($skip: Int!, $limit: Int!){
-        allMdx(sort: {fields: frontmatter___date, order: DESC}
+        allMdx(sort: {frontmatter: { date: DESC }}
           limit: $limit
           skip: $skip
         ) {
@@ -169,5 +173,3 @@ export const query = graphql`
         }
     }
 `
-
-export default BlogList

@@ -84,7 +84,7 @@ module.exports = {
       {
         resolve: `gatsby-plugin-disqus`,
         options: {
-          shortname: `wesinalves`
+          shortname: `engmoderno`
         }
       },
       {

@@ -22,8 +22,7 @@ const BlogPost = ({ data, pageContext, children }) => {
     let disqusConfig = {
         url: 'engmoderno.com.br' + pageContext.slug,
         identifier: data.mdx.id,
-        title: data.mdx.frontmatter.title,
-        category_id: 'blog',
+        title: data.mdx.frontmatter.title,        
     }
     
 

@@ -21,6 +21,9 @@ const postQuery = `{
               title
               date_timestamp: date
             }
+            internal{
+              contentDigest
+            }
             excerpt(pruneLength: 5000)
             modified: frontmatter{date}
           }

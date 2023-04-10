@@ -20,7 +20,7 @@ const BlogPost = ({ data, pageContext, children }) => {
     const next = pageContext.next
     const previous = pageContext.previous        
     let disqusConfig = {
-        url: 'engmoderno.com.br' + pageContext.slug,
+        url: 'https://engmoderno.com.br' + pageContext.slug,
         identifier: data.mdx.id,
         title: data.mdx.frontmatter.title,        
     }

@@ -56,6 +56,7 @@ exports.createPages = ({ graphql, actions }) => {
                     }
                     internal {
                         contentFilePath
+                        contentDigest
                     }
                 }
             }

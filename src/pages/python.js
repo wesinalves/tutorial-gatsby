@@ -105,7 +105,7 @@ const AprendaPython = () => {
                         <Button fullwidth variant="contained" color="secondary" 
                         href="https://www.udemy.com/course/como-programar-em-python/?couponCode=PYTHON30" 
                         target="_blank">                     
-                            Compre o curso por R$ 30,00!             
+                            Compre o curso por R$ 79,90!             
                         </Button>
                     </Grid>                                
                 </Grid>
@@ -193,7 +193,7 @@ const AprendaPython = () => {
                         <Button fullwidth variant="contained" color="secondary" 
                         href="https://www.udemy.com/course/como-programar-em-python/?couponCode=PYTHON30" 
                         target="_blank">                     
-                            Compre o curso por R$ 30,00!             
+                            Compre o curso por R$ 79,90!             
                         </Button>
                     </Grid>                                
                 </Grid>

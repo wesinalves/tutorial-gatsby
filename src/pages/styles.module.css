@@ -1,3 +1,13 @@
+:root {
+    --size-300: 0.75rem;
+    --size-400: 1rem;
+    --size-500: 1.33rem;
+    --size-600: 1.77rem;
+    --size-700: 2.36rem;
+    --size-800: 3.15rem;
+    --size-900: 4.2rem;
+}
+
 .image-perfil{
     border-radius: 20%;
     flex: none;
@@ -41,7 +51,7 @@
 
 
 .hover-link {
-    text-decoration: none;
+    text-decoration: none;    
 }
 .hover-link:visited {
     color: #1b5e20;
@@ -96,5 +106,49 @@
     display: none;
 }
 
+p {
+    padding: 0.5rem;
+    margin: 0.5rem;    
+}
 
+ul li {
+    padding-left: 2rem;
+    margin: 0.5rem;
+    list-style: inside;
+}
+
+p a {
+    text-decoration: none;
+    color: currentColor;
+}
+
+p a:hover {    
+    color: #f44336;
+}
+
+h1,
+h2,
+h3,
+h4 {
+  font-family: -apple-system, BlinkMacSystemFont, avenir next, avenir, helvetica neue,
+    helvetica, Ubuntu, roboto, noto, segoe ui, arial, sans-serif;
+  line-height: 1.3;
+}
+ 
+h1,
+h2 {
+  font-weight: 900;
+}
+ 
+h1 {
+  font-size: var(--size-700);
+}
+ 
+h2 {
+  font-size: var(--size-600);
+}
+ 
+h3 {
+  font-size: var(--size-600);
+}
 

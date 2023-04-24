@@ -14,7 +14,7 @@ import Stack from '@mui/material/Stack';
 import Layout from '../components/layout';
 import Header from '../components/header';
 import Seo from '../components/seo';
-import { hoverLink } from '../pages/styles.module.css';
+import { hoverLink, article } from '../pages/styles.module.css';
 
 const BlogPost = ({ data, pageContext, children }) => {    
     const next = pageContext.next
@@ -35,7 +35,7 @@ const BlogPost = ({ data, pageContext, children }) => {
             />
             <Container maxWidth="md" component="main">
                 <Header name={data.mdx.frontmatter.title} links={[{path: '/', description: 'Home'}, {path: '/blog', description: 'Blog'}]} />
-                <Paper elevation={3} sx={{p: 1, color: 'text.secondary'}}>
+                <Paper elevation={3} sx={{color: 'text.secondary'}} className={article}>
                     <p>{data.mdx.frontmatter.date}</p>                                
                     {children}                     
                 </Paper>

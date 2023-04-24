@@ -106,23 +106,27 @@
     display: none;
 }
 
-p {
+.article {
+    padding: 0.2rem;
+}
+
+.article p {
     padding: 0.5rem;
     margin: 0.5rem;    
 }
 
-ul li {
+.article ul li {
     padding-left: 2rem;
     margin: 0.5rem;
     list-style: inside;
 }
 
-p a {
+.article p a {
     text-decoration: none;
     color: currentColor;
 }
 
-p a:hover {    
+.article p a:hover {    
     color: #f44336;
 }
 

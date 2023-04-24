@@ -260,8 +260,8 @@ const Layout = ({props, pageTitle, children}) => {
                     <Grid item xs={6} sm={3} key={footer.title}>
                     <Typography variant="h6" color="text.primary" gutterBottom>
                         {footer.title}
-                    </Typography>
-                    <ul>                        
+                    </Typography>                    
+                      <ul>
                         {footer.description.map((item) => (
                         <li key={item[0]}>
                             <Link to={item[1]} className={hoverLink}>
@@ -269,7 +269,7 @@ const Layout = ({props, pageTitle, children}) => {
                             </Link>
                         </li>
                         ))}
-                    </ul>
+                      </ul>
                     </Grid>
                 ))}
                 </Grid>

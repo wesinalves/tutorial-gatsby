@@ -111,8 +111,7 @@
 }
 
 .article p {
-    padding: 0.5rem;
-    margin: 0.5rem;    
+    padding: 0.5rem;        
 }
 
 .article ul li {
@@ -128,6 +127,10 @@
 
 .article p a:hover {    
     color: #f44336;
+}
+
+.article h1, h2, h3 {
+    padding: 0.5rem;
 }
 
 h1,

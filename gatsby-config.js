@@ -30,6 +30,7 @@ module.exports = {
       {
         resolve: "gatsby-plugin-mdx",
         options: {
+          remarkPlugins: [require('remark-math'), require('remark-html-katex')],
           gatsbyRemarkPlugins: [
             {
               resolve: "gatsby-remark-images",
@@ -40,6 +41,7 @@ module.exports = {
           ],
         },
       },
+      
       "gatsby-transformer-sharp",
       "gatsby-plugin-material-ui",
       {
@@ -99,5 +101,6 @@ module.exports = {
           display: `standalone`,
         },
       },
+      "gatsby-plugin-netlify",
     ]
 }

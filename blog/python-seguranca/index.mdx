@@ -2,7 +2,7 @@
 layout: post
 title:  "Melhores práticas de segurança para desenvolvedores Python."
 date:   2024-04-25 14:30:14 -0300
-category: DEVSECOPS
+category: Tech
 color: info
 description: A flexibilidade do Python no desenvolvimento web, análise de dados e projetos de aprendizado de máquina e suas implicações de segurança.
 hero_image: "./pysec.jpg"
@@ -28,9 +28,9 @@ Aproveite o ecossistema de bibliotecas e ferramentas do Python projetadas para a
 # Manter os pacotes sempre atualizados
 Atualize regularmente o tempo de execução e as bibliotecas do Python para corrigir vulnerabilidades e manter a segurança do aplicativo. Use ferramentas modernas de gerenciamento de dependências, como Poetry, para gerenciar e atualizar dependências com eficiência.
 ## Usando poetry
-Comece usando *poetry* por seu forte gerenciamento de dependências e recursos de empacotamento. *Poetry* possui uma ferramenta integrada para rastrear e atualizar dependências de pacotes. Para verificar dependências desatualizadas em seu projeto, use *poetry show --outdated*. Este comando exibe todas as dependências que possuem versões mais recentes. Para atualizar um pacote específico, use *poetry update <nome do pacote>* ou simplesmente *poetry update* para atualizar todas as dependências desatualizadas. *Poetry* garante que as atualizações sigam as restrições de versão semântica em seu arquivo pyproject.toml, preservando a compatibilidade e minimizando o risco de introdução de alterações significativas.
+Comece usando *poetry* por seu forte gerenciamento de dependências e recursos de empacotamento. *Poetry* possui uma ferramenta integrada para rastrear e atualizar dependências de pacotes. Para verificar dependências desatualizadas em seu projeto, use *poetry show --outdated*. Este comando exibe todas as dependências que possuem versões mais recentes. Para atualizar um pacote específico, use *poetry update 'nome do pacote'* ou simplesmente *poetry update* para atualizar todas as dependências desatualizadas. *Poetry* garante que as atualizações sigam as restrições de versão semântica em seu arquivo pyproject.toml, preservando a compatibilidade e minimizando o risco de introdução de alterações significativas.
 ## Usando pip
-Em ambientes sem *poetry*, o *Pip* é uma ferramenta útil para atualização de pacotes. Use *pip list --outdated* para encontrar pacotes desatualizados. Para atualizar um pacote, use *pip install --upgrade <package-name>* ou aplique *pip install --upgrade* para atualizar vários pacotes. No entanto, para melhor resolução de dependências e recursos de bloqueio, a biblioteca *poetry* é a opção preferida.
+Em ambientes sem *poetry*, o *Pip* é uma ferramenta útil para atualização de pacotes. Use *pip list --outdated* para encontrar pacotes desatualizados. Para atualizar um pacote, use *pip install --upgrade 'package-name'* ou aplique *pip install --upgrade* para atualizar vários pacotes. No entanto, para melhor resolução de dependências e recursos de bloqueio, a biblioteca *poetry* é a opção preferida.
 
 Seja cauteloso com as principais atualizações de versão. Eles podem introduzir alterações significativas. Teste seu aplicativo minuciosamente após as atualizações para garantir que todas as funcionalidades funcionem conforme o esperado. Esta fase de testes é crucial para identificar quaisquer incompatibilidades ou problemas introduzidos pelas dependências atualizadas. Aborde-os imediatamente para manter a estabilidade e a segurança.
 

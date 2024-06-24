@@ -38,10 +38,10 @@ module.exports = {
                 maxWidth: 1200,
               },
             },
-          ],
+            "gatsby-remark-gifs",
+          ],          
         },
       },
-      
       "gatsby-transformer-sharp",
       "gatsby-plugin-material-ui",
       {
@@ -102,5 +102,6 @@ module.exports = {
         },
       },
       "gatsby-plugin-netlify",
+      
     ]
 }

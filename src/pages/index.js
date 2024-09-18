@@ -150,7 +150,7 @@ const IndexPage = () => {
           mt={2}
           gutterBottom
           >
-          Tiktok
+          Habilidades
           </Typography>
           <Grid container spacing={5} alignItems="flex-end">
           {tiers.map((tier) => (
@@ -205,7 +205,7 @@ const IndexPage = () => {
           mt={10}
           gutterBottom
           >
-          Instagram
+          Portfolio
           </Typography>
           <Grid container spacing={5} alignItems="flex-end">
           {portfolios.map((portfolio) => (

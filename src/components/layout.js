@@ -108,7 +108,7 @@ const footers = [
       description: [
         ['facebook','https://pt-br.facebook.com/wesin.ribeiro'],
         ['instagram','https://www.instagram.com/engmoderno/'],
-        ['youtube','https://www.youtube.com/channel/UCk70TYJHmZ_tsBKo-_SjP1w'],
+        ['youtube','https://www.youtube.com/@engmoderno/videos'],
         ['linkedin','https://www.linkedin.com/in/wesin-alves-0012b1145/?originalSubdomain=br'],
         ['github','https://github.com/wesinalves'],
       ],
@@ -264,9 +264,15 @@ const Layout = ({props, pageTitle, children}) => {
                       <ul>
                         {footer.description.map((item) => (
                         <li key={item[0]}>
-                            <Link to={item[1]} className={hoverLink}>
-                            {item[0]}
-                            </Link>
+                            {(footer.title === 'Social')?(
+                                <a href={item[1]} className={hoverLink} target="_blank" rel="noopener noreferrer">
+                                {item[0]} 
+                                </a>
+                            ):(
+                              <Link to={item[1]} className={hoverLink}>
+                              {item[0]}
+                              </Link>
+                            )}
                         </li>
                         ))}
                       </ul>

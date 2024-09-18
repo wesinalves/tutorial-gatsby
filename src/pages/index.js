@@ -1,7 +1,5 @@
 import * as React from 'react'
 import Layout from '../components/layout'
-import { StaticImage } from 'gatsby-plugin-image'
-import { imagePerfil } from './styles.module.css';
 import Button from '@mui/material/Button';
 import Card from '@mui/material/Card';
 import CardActions from '@mui/material/CardActions';
@@ -14,6 +12,7 @@ import Container from '@mui/material/Container';
 import Rating from '@mui/material/Rating';
 import Seo from '../components/seo';
 import { navigate } from "gatsby"
+import YoutubeEmbed from '../components/youtube';
 
 const tiers = [
   {
@@ -110,23 +109,9 @@ const IndexPage = () => {
             description='Engenheiro da computação que adora programar em Python'            
         />
       {/* Hero unit */}
-      <Container disableGutters maxWidth="sm" component="main" sx={{ pt: 4, pb: 6, display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
+      <Container disableGutters maxWidth="md" component="main" sx={{ pt: 4, pb: 6, display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
           
-          <Typography
-          component="h1"
-          variant="h2"
-          align="center"
-          color="text.primary"
-          gutterBottom
-          >
-          Olá, Seja bem vindo!
-          </Typography>
-          <Typography variant="h5" align="center" color="text.secondary" component="p">
-          Meu nome é Wesin. Sou um engenheiro da computação que adora programar em Python. 
-          {/* Minha especialidade é criar soluções práticas
-          para problemas complexos. Faça donwload gratuito do meu ebook que ensina a automatizar
-          algumas tarefas do dia-a-dia de alguém que usa um computador. */}
-          </Typography>
+          <YoutubeEmbed embedId='5PepfmvEgM8' />
           <Grid container justifyContent='center' sx={{ marginTop: 1}} spacing={2}>
             <Grid item >                
                 <Button fullwidth variant="contained" color="primary" href="https://forms.gle/qxgNetg74C8XwtU17">
@@ -140,13 +125,18 @@ const IndexPage = () => {
                 </Button>
             </Grid>            
           </Grid>
-          <StaticImage
-                    alt="Engenheiro da computação que adora programar em python."
-                    src="../images/perfil2.png"
-                    className={imagePerfil}
-                    width={200}                    
+          <Typography
+          component="h1"
+          variant="h4"          
+          align="center"
+          color="text.primary"
+          mt={2}
+          gutterBottom
+          >
+          Contribuições este ano
+          </Typography>
+          <img src="https://ghchart.rshah.org/wesinalves" alt="Name Your Github chart"  width="100%"/>
 
-          />
           
       </Container>      
       {/* End hero unit */}
@@ -160,7 +150,7 @@ const IndexPage = () => {
           mt={2}
           gutterBottom
           >
-          Habilidades
+          Tiktok
           </Typography>
           <Grid container spacing={5} alignItems="flex-end">
           {tiers.map((tier) => (
@@ -215,7 +205,7 @@ const IndexPage = () => {
           mt={10}
           gutterBottom
           >
-          Portfólio
+          Instagram
           </Typography>
           <Grid container spacing={5} alignItems="flex-end">
           {portfolios.map((portfolio) => (

@@ -51,15 +51,12 @@
 
 
 .hover-link {
+    color: #f44336;
     text-decoration: none;    
-}
-.hover-link:visited {
-    color: #1b5e20;
 }
 
 .hover-link:hover {
-    color: #f44336;
-    text-decoration-color: #f44336;    
+    text-decoration: underline;    
 }
 
 .ais-InstantSearch__root {
@@ -122,11 +119,11 @@
 
 .article p a {
     text-decoration: none;
-    color: currentColor;
+    color: #f44336;
 }
 
 .article p a:hover {    
-    color: #f44336;
+    text-decoration: underline;
 }
 
 .article h1, h2, h3 {
@@ -157,5 +154,9 @@ h2 {
  
 h3 {
   font-size: var(--size-600);
+}
+
+blockquote {
+    font-style: italic;
 }
 

@@ -191,9 +191,9 @@ const AprendaPython = () => {
                 <Grid container justifyContent='center' sx={{ mb: 1, mt: 1}} spacing={2}>
                     <Grid item >                
                         <Button fullwidth variant="contained" color="secondary" 
-                        href="https://www.udemy.com/course/como-programar-em-python/?couponCode=PYTHON30" 
+                        href="https://www.udemy.com/course/como-programar-em-python" 
                         target="_blank">                     
-                            Compre o curso por R$ 79,90!             
+                            Compre o curso agora!             
                         </Button>
                     </Grid>                                
                 </Grid>

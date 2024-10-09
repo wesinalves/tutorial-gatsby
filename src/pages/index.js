@@ -1,4 +1,5 @@
 import * as React from 'react'
+import { useEffect, useState } from 'react';
 import Layout from '../components/layout'
 import Button from '@mui/material/Button';
 import Card from '@mui/material/Card';
@@ -102,6 +103,14 @@ const portfolios = [
 ]
 
 const IndexPage = () => {
+  const [posts, setPosts] = useState([]);
+
+  useEffect(() => {
+    fetch('https://graph.instagram.com/{user-id}/media?fields=id,caption,media_type,media_url,permalink&access_token=YOUR_ACCESS_TOKEN&limit=3')
+      .then((response) => response.json())
+      .then((data) => setPosts(data.data));
+  }, []);
+
   return (
     <Layout pageTitle="Home Page">
         <Seo
@@ -111,7 +120,7 @@ const IndexPage = () => {
       {/* Hero unit */}
       <Container disableGutters maxWidth="md" component="main" sx={{ pt: 4, pb: 6, display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
           
-          <YoutubeEmbed embedId='3Pu1QblHP7s' />
+          <YoutubeEmbed embedId='TUcPxQA3mAo' />
           <Grid container justifyContent='center' sx={{ marginTop: 1}} spacing={2}>
             <Grid item >                
                 <Button fullwidth variant="contained" color="primary" href="https://forms.gle/qxgNetg74C8XwtU17">
@@ -142,6 +151,46 @@ const IndexPage = () => {
       {/* End hero unit */}
       
       <Container maxWidth="md" component="main">
+      {/* <Typography
+          component="h1"
+          variant="h4"          
+          align="center"
+          color="text.primary"
+          mt={10}
+          gutterBottom
+          >
+          Instagram
+          </Typography> */}
+          <Grid container spacing={5} alignItems="flex-end">
+          {posts.map((post) => (
+              // Enterprise card is full width at sm breakpoint
+              <Grid
+              item
+              key={post.id}
+              xs={12}
+              sm={post.id === 'Enterprise' ? 12 : 6}
+              md={4}
+              >
+              <Card >
+                <CardMedia>
+                    {/* <StaticImage
+                        alt={portfolio.title}
+                        src={portfolio.image}
+                    /> */}
+                    <img src={post.media_url} alt={post.caption} width="100"/>
+                </CardMedia>
+                    
+                <CardContent>
+                    <a href={post.permalink} target="_blank" rel="noopener noreferrer">
+                        <Typography variant="body2" color="text.secondary">
+                        {post.caption.substring(0, 30)}
+                        </Typography>
+                    </a>
+                </CardContent>
+                </Card>
+              </Grid>
+          ))}
+          </Grid>
           <Typography
           component="h1"
           variant="h4"          

@@ -19,7 +19,7 @@ const IndexPage = () => {
   const [posts, setPosts] = useState([]);
 
   useEffect(() => {
-    fetch(`https://graph.instagram.com/${process.env.APP_ID}/media?fields=id,caption,media_type,media_url,permalink&access_token=${process.env.ACCESS_TOKEN}&limit=6`)
+    fetch(`https://graph.instagram.com/${process.env.GATSBY_APP_ID}/media?fields=id,caption,media_type,media_url,permalink&access_token=${process.env.GATSBY_ACCESS_TOKEN}&limit=6`)
       .then((response) => response.json())
       .then((data) => setPosts(data.data));
   }, []);

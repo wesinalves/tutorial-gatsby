@@ -100,12 +100,12 @@ const AprendaPython = () => {
                     Então o curso Como Programar em Python é perfeito para você!
                 </Typography>
                 <YoutubeEmbed embedId='b4zRMjvWtq8' />                
-                <Grid container justifyContent='center' sx={{ mb: 1}} spacing={2}>
+                <Grid container justifyContent='center' sx={{ mb: 1, mt: 1}} spacing={2}>
                     <Grid item >                
                         <Button fullwidth variant="contained" color="secondary" 
                         href="https://www.udemy.com/course/como-programar-em-python/?couponCode=PYTHON30" 
                         target="_blank">                     
-                            Compre o curso por R$ 79,90!             
+                            Compre o curso agora!             
                         </Button>
                     </Grid>                                
                 </Grid>

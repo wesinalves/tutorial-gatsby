@@ -40,6 +40,17 @@ module.exports = {
                 maxWidth: 1200,
               },
             },
+            {
+              resolve: `gatsby-remark-prismjs`,
+              options: {
+                // Optional: classPrefix, inlineCodeMarker, etc.
+                prompt: {
+                  user: "root",
+                  host: "localhost",
+                  global: false,
+                },
+              },
+            },
             "gatsby-remark-gifs",
           ],          
         },

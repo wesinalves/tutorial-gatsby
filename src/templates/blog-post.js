@@ -2,7 +2,7 @@ import * as React from 'react'
 import { graphql } from 'gatsby'
 import { Link } from 'gatsby'
 import { GatsbyImage, getImage } from 'gatsby-plugin-image'
-//import { MDXRenderer } from 'gatsby-plugin-mdx'
+import { MDXProvider } from "@mdx-js/react"
 import { Disqus, CommentCount } from 'gatsby-plugin-disqus'
 
 import Container from '@mui/material/Container'
@@ -37,7 +37,7 @@ const BlogPost = ({ data, pageContext, children }) => {
                 <Header name={data.mdx.frontmatter.title} links={[{path: '/', description: 'Home'}, {path: '/blog', description: 'Blog'}]} />
                 <Paper elevation={3} sx={{color: 'text.secondary'}} className={article}>
                     <p>{data.mdx.frontmatter.date}</p>                                
-                    {children}                     
+                        <MDXProvider>{children}</MDXProvider>
                 </Paper>
                 <Stack spacing={2} direction="row" justifyContent="space-between" sx={{mt: 1}}>
                 {previous && (

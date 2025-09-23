@@ -111,7 +111,7 @@ Outra forma de resolver o problema da colisão de chaves é o enderaçamento abe
 
 O algoritmos de inserção na tabela de espalhamento que utiliza enderaçamento aberto é dados a seguir:
 
-```
+```js
 Inserir(T, k)
     i = 0
     while i < m
@@ -126,7 +126,7 @@ Inserir(T, k)
 
 O algoritmo de busca é semelhante ao de inserção, mas retorna o índice do elemento encontrado ou "não encontrado" se o elemento não estiver na tabela.
 
-```
+```js
 Buscar(T, k)
     i = 0
     while i < m
@@ -142,7 +142,7 @@ Buscar(T, k)
 
 O algoritmo de eliminação é semelhante ao de busca, mas marca o slot como DELETED em vez de NIL.
 
-```
+```js
 Eliminar(T, k)
     i = 0
     while i < m

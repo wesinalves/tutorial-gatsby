@@ -56,7 +56,7 @@ Objetivo: Classificar diferentes espécies de plantas com base em suas caracter�
 
 Ferramentas: Python, Scikit-learn, Pandas, matplotlib
 
-Descrição: Utilize um conjunto de dados de plantas que contenha informações como comprimento e largura das folhas. Treine um modelo de classificação, como K-Nearest Neighbors (KNN) ou Decision Trees, para identificar a espécie da planta com base nessas características.
+Descrição: Utilize um conjunto de dados de [plantas](https://github.com/wesinalves/projetos-ml-para-iniciantes/blob/main/datasets/iris.zip) que contenha informações como comprimento e largura das folhas. Treine um modelo de classificação para identificar a espécie da planta com base nessas características.
 
 ![iris-machinelearning](./iris-machinelearning.png)
 
@@ -76,7 +76,7 @@ Objetivo: Reconhecer dígitos manuscritos a partir de imagens.
 
 Ferramentas: Python, TensorFlow/Keras, NumPy
 
-Descrição: Use o conjunto de dados MNIST, que contém imagens de dígitos manuscritos. Treine uma rede neural simples para classificar as imagens em dígitos de 0 a 9.
+Descrição: Use o conjunto de dados [MNIST](https://www.kaggle.com/datasets/hojjatk/mnist-dataset), que contém imagens de dígitos manuscritos. Treine uma rede neural simples para classificar as imagens em dígitos de 0 a 9.
 
 ![mnist-dataset](./mnist-dataset.jpeg)
 
@@ -90,21 +90,24 @@ Tarefas a serem executadas nesse projeto:
 * Avaliação do modelo usando métricas como RMSE (F1, precisão, revocação, matriz de confusão)
 
 ## Segmentação de imagens
-Objetivo: Segmentar diferentes objetos em uma imagem.
+Segmentação de imagens é a tarefa de dividir uma imagem em várias partes ou segmentos, geralmente para identificar e isolar objetos ou regiões específicas dentro da imagem. 
+Objetivo: Segmentar diferentes objetos em uma imagem usando um algoritmo de agrupamento.
 
-Ferramentas: Python, OpenCV, TensorFlow/Keras
+Ferramentas: Python, matplotlib, sklearn
 
-Descrição: Utilize um conjunto de dados de imagens com anotações de segmentação. Treine um modelo de segmentação, como U-Net, para identificar e separar diferentes objetos dentro das imagens.
-
-![image-segmentation](./image-segmentation.png)
+Descrição: Utilize a imagem da [ladybug](https://github.com/wesinalves/projetos-ml-para-iniciantes/blob/main/datasets/ladybug.png) para treinar uma modelo de agrupamento usando o algoritmo Kmeans.
+![image-segmentation](./ladybug.png)
 
 Tarefas a serem executadas nesse projeto:
-* Carregamento dos dados
-* Análise exploratória dos dados
-* Pré-processamento dos dados (tratamento de valores ausentes, codificação de variáveis categóricas)
-* Gráfico de espalhamento (scatter plot)
-* Divisão dos dados em conjuntos de treinamento e teste
-* Treinamento do modelo de classificação (Kmeans)
+* Carregamento da imagem
+* Visualize a imagem original
+* Verifique a dimensão da imagem
+* Redimensione a imagem (matriz para vetor)
+* Treinamento do modelo de agrupamento (Kmeans)
+* Varie o número de clusters utilizados no treinamento (10, 8, 6, 4, 2)
+
+## Considerações finais
+Esses projetos são ótimos pontos de partida para quem está começando em Machine Learning. Eles cobrem conceitos fundamentais como regressão, classificação e segmentação de imagens, além de fornecer experiência prática com bibliotecas populares como Scikit-learn, Pandas e TensorFlow/Keras. À medida que você avança, pode explorar projetos mais complexos e conjuntos de dados maiores para continuar aprimorando suas habilidades em Machine Learning. Uma dica extra é sempre documentar seu código e compartilhar seus projetos no GitHub para construir um portfólio que possa ser útil em futuras oportunidades profissionais.
 
 ## Referências
 - [Base de dados](https://github.com/wesinalves/projetos-ml-para-iniciantes/tree/main/datasets)

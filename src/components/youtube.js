@@ -6,11 +6,12 @@ import { videoResponsive } from './layout.module.css'
 const YoutubeEmbed = ({ embedId }) => (
     <Container maxWidth="md" className={videoResponsive}>
         <iframe
-            src={`https://www.youtube-nocookie.com/embed/${embedId}`}
+            src={`https://www.youtube.com/embed/${embedId}`}
             frameBorder="0"
             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+            title="Youtube video player"
+            referrerpolicy="strict-origin-when-cross-origin"
             allowFullScreen
-            title="Embedded youtube"
         />
     </Container>
 )

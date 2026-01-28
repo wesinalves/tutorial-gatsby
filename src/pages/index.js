@@ -24,6 +24,7 @@ const IndexPage = () => {
       .then((data) => setPosts(data.data));
   }, []);
 
+
   return (
     <Layout pageTitle="Home Page">
         <Seo
@@ -32,7 +33,7 @@ const IndexPage = () => {
         />
       {/* Hero unit */}
       <Container disableGutters maxWidth="md" component="main" sx={{ pt: 4, pb: 6, display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
-          <YoutubeEmbed embedId='5URjQZL3GVQ?si=pZsXzQ-drV1MBZqT' />
+          <YoutubeEmbed embedId='FNucvBOz83k?si=-LbJgGWYsaH3Eitr' />
           <Grid container justifyContent='center' sx={{ marginTop: 1}} spacing={2}>
             <Grid item >                
                 <Button fullwidth variant="contained" color="primary" href="https://forms.gle/qxgNetg74C8XwtU17">
